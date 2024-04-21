@@ -1,0 +1,58 @@
+body.page-admin-unimap{
+    .bootstrap-tagsinput .tag {
+        margin-right: 2px;
+        margin-bottom: 5px;
+        color: #fff;
+        background: linear-gradient(45deg,#0071a4,#03a9f4);
+        padding-left: .5rem;
+        padding-bottom: .25rem;
+        padding-top: .1rem;
+        border-radius: 5px;
+        line-height: 2;
+        font-size: 1rem;
+    }  
+    .bootstrap-tagsinput .tag [data-role=remove]:after {
+        content: "\f2ed";
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        color: #d4eeff;
+        margin: 0 0.25rem;
+        font-size: 0.7rem;
+    }
+
+    .unimap-settings{
+        .card:not([data-container-html])>.card-header{
+            background-color: #252525;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+    }
+
+    .visibleOnlyWhenChosenoff,
+    .visibleOnlyWhenChosen{
+        display: none;
+    }
+
+    .visibleOnlyWhenChosenon {
+        background-color: #fe1515;
+        padding: 0.1rem 0.5rem;
+        color: white;
+        border-radius: 0.25rem;
+    }
+
+
+    .gradient-msg{
+        transition: 1s all ease-in;
+        overflow: hidden;
+        background: linear-gradient(147deg, #a93fb7, #41b9ff);
+        padding: 0.5rem;
+        border-radius: 1rem;
+        color: white;
+        font-size: 0.7!important;
+        box-shadow: -3px 5px 7px 0px rgba(0, 0, 0, 0.3);
+       
+    }
+   
+}
+
+

@@ -1,0 +1,21 @@
+body.unimap-page{
+    #topicMap{
+        display: none;
+    }
+}
+
+#placeFields {
+    overflow-x: hidden;
+
+    .accordion-button:not(.collapsed) {
+        background-color: transparent;
+    }
+}
+
+#topicPlaceGallery{
+    .swiper-slide{
+        width: auto;
+        img{ height: 13rem; width: auto; border: none;}
+    }
+
+}
