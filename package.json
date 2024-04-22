@@ -28,7 +28,9 @@
       "git add"
     ]
   },
-  "license": "GPL-3.0",
+
+  "licenseFile": "LICENSE",
+
   "bugs": {
     "url": "https://github.com/uacanada/nodebb-plugin-unimap/issues"
   },
