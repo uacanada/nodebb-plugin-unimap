@@ -1,4 +1,4 @@
-## 🍁 Map Your Business with `nodebb-plugin-unimap`
+## 🍁 Map Your *Own* Business with `nodebb-plugin-unimap`
 Turn your NodeBB forum into a powerful app with an interactive map using `nodebb-plugin-unimap` plugin. Allow your users to add locations to the map and discover various monetization opportunities for your platform.
 
 Demo available at [UACANADA.ORG](https://uacanada.org).
@@ -15,7 +15,7 @@ Demo available at [UACANADA.ORG](https://uacanada.org).
    ```
    npm i nodebb-plugin-unimap
    ```
-    **OR**
+    *Or*
    ```
    npm install https://github.com/uacanada/nodebb-plugin-unimap#main
    ```
@@ -34,7 +34,7 @@ Demo available at [UACANADA.ORG](https://uacanada.org).
       ./nodebb start 
       ./nodebb log
       ```
-4. 🚀 **Activation**: After installing the plugin for the first time, navigate to the `/admin/extend/plugins#installed` panel and *activate* the `nodebb-plugin-unimap`.
+4. 🚀 **Activation**: After installing the plugin for the first time, navigate to the `/admin/extend/plugins#installed` panel and **activate** the `nodebb-plugin-unimap`. After activating the plugin, it is essential to **Rebuild & Restart** your NodeBB to ensure that all changes take effect.
 5. 🖥️ **Access the Unimap Control Panel**: `/admin/plugins/unimap`
  - 🔧 **Configure the plugin**: You're provided with the flexibility to create tabs, categories, and various denominations suited to your unique context.
  - 💡 **Leverage its adaptability**: This plugin can be tailored for various needs - be it an event map, a real estate platform, or even a social network.
