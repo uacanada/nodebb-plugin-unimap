@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-unimap",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Interactive map plugin for NodeBB forums. Enhance user engagement by allowing location additions and explore monetization opportunities.",
   "main": "lib/backend/main.js",
   "repository": {
@@ -28,7 +28,8 @@
       "git add"
     ]
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
   "bugs": {
     "url": "https://github.com/uacanada/nodebb-plugin-unimap/issues"
   },
