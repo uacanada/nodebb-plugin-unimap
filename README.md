@@ -26,6 +26,12 @@ Demo available at [UACANADA.ORG](https://uacanada.org).
      npm install https://github.com/uacanada/nodebb-plugin-unimap#dev
      ```
      
+      ```
+      cd /path/to/nodebb
+      npm install https://github.com/uacanada/nodebb-plugin-unimap#dev && ./nodebb stop && ./nodebb build && ./nodebb start && ./nodebb log
+      ```
+
+
 5. 🚀 **Initial Setup**: After installing the plugin for the first time, navigate to the `/admin` panel and execute a rebuild and restart.
 6. 🖥️ **Access the Unimap Control Panel**: `/admin/plugins/unimap`
  - 🔧 **Configure the plugin**: You're provided with the flexibility to create tabs, categories, and various denominations suited to your unique context.
