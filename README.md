@@ -27,8 +27,11 @@ Demo available at [UACANADA.ORG](https://uacanada.org).
      ```
      
       ```
-      cd /path/to/nodebb
-      npm install https://github.com/uacanada/nodebb-plugin-unimap#dev && ./nodebb stop && ./nodebb build && ./nodebb start && ./nodebb log
+      npm install https://github.com/uacanada/nodebb-plugin-unimap#dev 
+      ./nodebb stop 
+      ./nodebb build 
+      ./nodebb start 
+      ./nodebb log
       ```
 
 
