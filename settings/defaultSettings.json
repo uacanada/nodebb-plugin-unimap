@@ -1,0 +1,116 @@
+{
+      "initialCoordinates": "49.28324,-123.11989",
+      "alwaysUseDefaultLocation": "",
+      "defaultZoom": "11",
+      "maxZoomOut": "3",
+      "mapBoxApiKey": "goto: docs.mapbox.com/api",
+      "bottomRightCorner": "10, -20",
+      "topLeftCorner": "60, -150",
+      "mapTitle": "UniMap Configuration",
+      "heroTitle": "MANAGE",
+      "heroSubtitle": "Your Mapping Dashboard Awaits",
+      "altContentTitle": "Alternate Version for lang ALT",
+      "altContentTrigger": "ALT",
+      "unregisteredUserAlert": "Please register <a href=\"/register\">here</a>",
+      "emptyTabMessage": "<div class=\"mt-3 p-3 text-center fs-5\"><p><i class=\"fa-solid fa-eye-slash\"></i> This tab is currently empty. </p><p class=\"newLocationOpenMarker btn btn-primary\">Would you like to add your own location to the map?</p></div>",
+      "locationSharingErrorAlert": "The location must be specified: <ul class=\"try-locate-me list-group p-0 mt-2\"><li class=\"list-group-item\"><i class=\"fa-solid fa-location-arrow\"></i> Allow geolocation</li><li class=\"list-group-item\"><i class=\"fa-regular fa-hand-point-down\"></i> Or select a by finger</li><li class=\"list-group-item\"><i class=\"fa-solid fa-magnifying-glass\"></i> Or search Street Address</li></ul>",
+      "defaultMarkerImage": "/assets/plugins/nodebb-plugin-unimap/icons/placeMarker.png",
+      "clusterIcon": "/assets/plugins/nodebb-plugin-unimap/icons/cluster.svg",
+      "citiesData": "London,Paris,New York,Vancouver",
+      "countryLimit": "",
+      "entityTitle": "Region",
+      "contextButtonSlide": "<a title=\"Forum Link\" href=\"/categories\"\n  ><button title=\"Open Forum\" class=\"btn btn-primary rounded-pill m-1 \" type=\"button\">\n    <i class=\"fa-solid fa-comment-dots\"></i> Community\n  </button>\n</a>\n\n\n<button \n    title=\"Open Sheet\" \n    type=\"button\" \n    class=\"showBottomPanel btn btn-primary rounded-pill m-1 py-1\" \n    data-ua-content-id=\"tab-widgets\" aria-controls=\"ua-bottom-sheet\">\n    <i class=\"fa fas fa-solid fa-angle-up fa-fade\"></i>\n</button>",
+      "bottomSheetOffset": "100,40,10,0,0",
+      "mapTriggerClass": "unimap-page",
+      "placeTopicTag": "place",
+      "swipeResistance": "40",
+      "mapPageRouter": "/map",
+      "templateName": "map",
+      "zoomThreshold": "13",
+      "geographicalEntities": [
+        {
+          "province": "GB",
+          "provinceTitle": "United Kingdom"
+        },
+        {
+          "province": "US",
+          "provinceTitle": "United States"
+        }
+      ],
+      "tabCategories": [
+        {
+          "color": "#004683",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "footer": "",
+          "icon": "fa-map",
+          "placeByTagCollector": "place",
+          "slug": "all",
+          "title": "All places"
+        },
+        {
+          "color": "#095bff",
+          "description": "Suspendisse et nunc non orci suscipit aliquam.",
+          "footer": "",
+          "icon": "fa-calendar-check",
+          "placeByTagCollector": "event",
+          "slug": "events",
+          "title": "Events & Heritage"
+        }
+      ],
+      "subCategories": [
+        {
+          "cid": "1",
+          "cidname": "Events",
+          "icon": "fa-people-robbery",
+          "name": "Meetups Events",
+          "parents": "[\"events\"]",
+          "slug": "meetups"
+        },
+        {
+          "cid": "1",
+          "cidname": "HELP",
+          "icon": "fa-hand-holding-heart",
+          "name": "Online Assistance",
+          "parents": "[\"all\"]",
+          "slug": "onlineassist"
+        }
+      ],
+      "eventCategories": [
+        {
+          "name": "Meetups",
+          "slug": "meetups"
+        },
+        {
+          "name": "Walks",
+          "slug": "walks"
+        }
+      ],
+      "advMarkers": [
+        {
+          "advMarkerImg": "/assets/plugins/nodebb-plugin-unimap/icons/placeMarker.png",
+          "advMarkerTags": "tag1,tag2,tag3,sponsored",
+          "card": "Lorem ipsum dolor sit amet.",
+          "color": "#fe62bd",
+          "icon": "fa-star-of-life",
+          "id": "sponsored",
+          "latlng": "49.28324,-123.11989",
+          "popup": "<strong>Lorem ipsum dolor sit amet.</strong>",
+          "title": "Lorem Ipsum",
+          "url": "/admin/plugins/unimap"
+        }
+      ],
+      "slogans": [
+        {
+          "slogan": "Tailor your mapping experience with precision. Dive into settings now."
+        },
+        {
+          "slogan": "For webmasters: A world of options in the admin panel is ready for your command."
+        },
+        {
+          "slogan": "Direct the narrative of your map. Engage, inform, and connect."
+        }
+      ],   
+      "debuginfo": {
+        "activation": 0
+      }
+}    

@@ -1,0 +1,198 @@
+html.ua-noscroll body.unimap-page{overflow-y: hidden!important;}
+
+
+  .template-topic .bottombar-nav {
+    transition: 500ms;
+    box-shadow: 0 0 13px -3px rgba(0, 0, 0, 0.8);
+  }
+
+
+  /* Pagination fix */
+
+
+.post-with-map .bottombar .pagination-block.show-pagination-block {
+    display: block!important;
+    transform: translateY(0px);
+}
+
+.post-with-map .bottombar .pagination-block.hide-pagination-block {
+    display: none;
+    transform: translateY(500px);
+}
+  
+
+@media screen and (max-width: 500px) {
+  
+}
+
+
+@media screen and (min-width: 800px) {
+  
+}
+
+
+
+
+body.unimap-page #content{background-color: var(--bs-body-bg);z-index:2;}
+
+
+body.unimap-page{transition: 200ms;}
+// body.unimap-page div#content { 
+//   padding-top: 2rem;
+//   width: 100%;
+//   max-width: 100%;
+//   z-index: 900;
+// } 
+body.unimap-page main#panel{
+  transition: 200ms;
+}
+
+// Prevent offcanvas padding manipulation
+body.template-map.theme-harmony {
+  padding-right: 0!important;
+}
+
+
+
+.leaflet-control-layers-toggle {
+	background-image: url(#{$images-path}layers.png);
+	width: 36px;
+	height: 36px;
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(#{$images-path}layers-2x.png);
+	background-size: 26px 26px;
+}
+
+.white-space-pre-line{
+  white-space: pre-line!important;
+}
+
+
+.leaflet-container {
+ //   font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+.leaflet-touch .leaflet-control-fullscreen a:last-child {
+  border-radius: 50%;
+  box-shadow: 0 0 4px 0px rgb(0 0 0 / 57%);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@200;400;700;900&display=swap');
+
+body,
+.leaflet-container
+{
+    font-family: 'Geologica', sans-serif;
+}
+
+
+
+
+
+
+#geocoderSearchbox{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  transition: .2s transform ease-in;
+  transform: translate3d(0,-500px,0);
+  z-index: 1020;
+  &.show{
+    transform: translate3d(0px,0,0);
+  }
+  .leaflet-control-geocoder-expanded:after{
+    content: '';
+    display: none!important;
+
+  }
+  .leaflet-control-geocoder:after {
+    content: "Enter a street address here";
+    margin-top: -1.5rem;
+    text-align: center;
+    width: 100%;
+    color: #8a8a8a;
+    display: block;
+    padding: 0;
+    font-size: .75rem;
+    overflow: hidden;
+    height: 1rem;
+    line-height: 1;
+  }
+}
+
+
+
+.leaflet-control-geocoder-alternatives{
+    width: 98%;
+    max-width: 480px;
+    margin: 0 auto;
+    z-index: 200;
+    a{
+      color: rgb(46, 60, 255);
+    }
+
+
+}
+
+.leaflet-control-geocoder.leaflet-bar{
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+
+
+.dropdown-menu.custom-ua-dropdown{
+    background-color: rgba(var(--bs-body-bg-rgb),0.5);
+    color: rgba(var(--bs-body-color-rgb),1);
+    max-width: 90vw;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(3px);
+    transition: all ease-in 0.2s;
+    white-space: nowrap;
+    a {
+      width: auto;
+      background: transparent;
+    }
+    .list-group-item{
+      background-color: transparent;
+      color: rgba(var(--bs-body-color-rgb),1);
+    }
+    &:not(.show) {
+      -webkit-animation: map-buttons-dropdown-animation 0.2s both;
+      animation: map-buttons-dropdown-animation 0.2s both;
+    }
+}
+
+
+.leaflet-control.btn-group.dropup{
+  .dropdown-menu.custom-ua-dropdown {
+    padding-right: 2.5rem;
+    #tile-chooser button,
+    #location-category-filter {
+      padding: .25rem;
+      margin: 0.75rem;
+      background: transparent;
+      max-width: 90%;
+      color: #000000;
+    }
+
+    a {
+      padding: 0.25rem 1rem;
+    }
+    
+  }
+} 
+
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 1rem;
+}

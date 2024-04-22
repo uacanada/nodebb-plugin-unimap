@@ -1,0 +1,223 @@
+$animationDuration: 1s;
+$animationTiming: ease-out;
+$filterValues: saturate(1) grayscale(1) brightness(1.1) contrast(1.1) opacity(0.7);
+$filterValuesAddPlaceMode: grayscale(0.9);
+
+
+
+
+@keyframes h1Animation {
+    0% { opacity : 0; transform: translateY(-4rem); }
+    20% { opacity : 1; transform: translateY(0); }
+    100% { opacity : 1; transform: translateY(0); }
+}
+  
+@keyframes pAnimation {
+    0% { opacity : 0; transform: translateY(-8rem); }
+    18% { opacity : 1; transform: translateY(0); }
+    100% { opacity : 1; transform: translateY(0); }
+}
+  
+
+#mapHero{
+  
+    z-index: 4001;
+    position: relative;
+   
+    h1 {
+        animation: h1Animation 10s;
+        animation-fill-mode: forwards;
+    }
+
+    // TODO remove
+    h1:after {
+        content: ' .org';
+        font-size: 1rem;
+        color: #df0404;
+        font-weight: normal;
+    }
+    
+    p {
+        animation: pAnimation 13s;
+        animation-fill-mode: forwards;
+        color: #df0404;
+        font-weight: 900;
+        text-shadow: 0.1rem 0.1rem 0.3rem rgba(50,50,50,.2), 0 0 3px white
+    }
+}
+
+#ua-logo-wrapper{
+    transition: transform .2s ease-in;
+    transform: translate3d(-300px,0,0);
+    z-index: 666;
+    span {
+        background: url(/assets/uploads/system/site-logo.png) no-repeat;
+        background-position: center;
+        background-size: contain;
+        backdrop-filter: blur(3px);
+    }
+    i.fa-home{
+        color: transparent;
+    }
+}
+
+
+.brand-container {
+    transition: all 0.3s ease-out;
+}
+
+[component="bottombar"],
+.leaflet-control-zoom, 
+.leaflet-control-locate,
+.leaflet-control-fullscreen{
+  transition: transform .3s;
+  transform: translate3d(0,0,0);
+
+}
+
+body.hiddenElements{
+
+   
+    
+    .newLocationCreateButton, #locationSelectionLatLng {
+      opacity: 0;
+      transition: .2s;
+    }
+   
+    #mapattribution{
+        opacity:0;transform: translate3d(-100%,0, 0);
+    }
+    
+}
+
+body.unimap-page {
+    .brand-container {
+        margin-top: 2rem;
+        z-index: 13;
+        .border-bottom {
+            border-color: transparent !important;
+        }
+
+        &.ua-hide-title {
+            transform: translate3d(0, -400px, 0);
+        }
+    }
+
+    .bottombar-nav {
+        background-color: rgba(255, 255, 255, .2) !important;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+
+    img.leaflet-tile {
+        filter: $filterValues;
+        transition: filter 2s ease-out;
+    }
+
+    #reconnect-alert {
+        display: none;
+    }
+
+    .bottombar .dropdown-menu{
+        -webkit-animation: map-dropdown-menus 0.2s both;
+        animation: map-dropdown-menus 0.2s both;
+      }
+
+    
+}
+
+body.unimap-page.map-touched {
+    img.leaflet-tile {
+        filter: none;
+    }
+
+    
+
+
+    #ua-logo-wrapper{
+        transform: translate3d(0,0,0);
+    }
+
+    .brand-container {
+        transform: translate3d(0, -400px, 0);
+    }
+
+    #mapHero {
+        animation: fade-and-move $animationDuration $animationTiming forwards;
+    }
+
+}
+
+body.unimap-page.map-touched.addPlaceMode {
+    img.leaflet-tile {
+        filter: $filterValuesAddPlaceMode;
+    }
+
+    .leaflet-marker-pane{
+        transition: .2s;
+        opacity: 0.25;
+    }
+
+
+}
+
+body.before-map-expand:not(.map-touched) {
+    .ua-markers {
+        .circle-icon {
+            background: #e3e3e3;
+        }
+        .circle-icon:after {
+            visibility: hidden;
+        }
+        .badge-text {
+            display: none;
+        }
+    }
+
+    .pro-m-marker.ua-marker-d:after{
+        display: none!important;
+    }
+
+    .leaflet-marker-icon.mycluster {
+        color: transparent;
+        filter: drop-shadow(1px 1px 3px rgb(49, 49, 49));
+        width: 30px !important;
+    }
+
+   
+}
+
+
+body.unimap-page.addPlaceMode {
+    #targetForNewPlaceWrapper{
+      z-index: 500;
+      background:radial-gradient(transparent, rgba(7, 25, 75, 0.3));
+    }
+    [component="bottombar"]{
+        transform: translate3d(0,100%, 0);
+    }
+}
+
+body.unimap-page.bottomPanelOpened {
+    [component="bottombar"]{
+        transform: translate3d(0,100%, 0);
+    }
+    .newLocationCreateButton{
+        transform: translate3d(0, 100vh, 0);
+    }
+    .leaflet-right{
+        .leaflet-control-fullscreen,
+        .leaflet-control-locate, 
+        .leaflet-control-zoom, 
+        .newLocationOpenMarker,
+        .filterPlaces, 
+        .tileChooser,
+        .rotateCards {
+            transform: translate3d(0, 100vh, 0);
+        }
+    }
+}
+
+.place-pic{
+    transition: .2s width;
+}
