@@ -213,19 +213,23 @@ UniMap.api.scrollableBottomPanel = {
 
   open: async function(reason) {
       UniMap.console.log('scrollableBottomPanel.open ',reason.attr('data-ua-content-id'))
-      if(reason.attr('data-ua-content-id') == "tab-close-panel") UniMap.api.scrollableBottomPanel.close()
-      let {buttonIndex,contentId} = await UniMap.api.loadTabToBottomPanel(reason)
-      const panel = this.getPanel();
-      panel.show().attr('aria-hidden', 'false');
-      this.toggleBodyClass(true);
-      this.setPanelState( { opened: true, hiding: false });
-      UniMap.setTimeout(() => {
-        UniMap.api.addCategoryButtons(buttonIndex,contentId) 
-        this.setPanelState( { openedButtons: true, hiding: false, hidingButtons: false });
-        UniMap.api.shakeElements(["#sheet-content-loader"], "ua-shake-vert");
-        panel.removeClass('panel-hidden').addClass('panel-shown');
-        $("#innerScrollPanel").animate({ scrollTop: PANEL_SCROLL_HEIGHT }, 300, "swing");
-      }, 100);   
+      if(reason.attr('data-ua-content-id') == "tab-close-panel"){
+        this.close()
+      } else {
+        let {buttonIndex,contentId} = await UniMap.api.loadTabToBottomPanel(reason)
+        const panel = this.getPanel();
+        panel.show().attr('aria-hidden', 'false');
+        this.toggleBodyClass(true);
+        this.setPanelState( { opened: true, hiding: false });
+        UniMap.setTimeout(() => {
+          UniMap.api.addCategoryButtons(buttonIndex,contentId) 
+          this.setPanelState( { openedButtons: true, hiding: false, hidingButtons: false });
+          UniMap.api.shakeElements(["#sheet-content-loader"], "ua-shake-vert");
+          panel.removeClass('panel-hidden').addClass('panel-shown');
+          $("#innerScrollPanel").animate({ scrollTop: PANEL_SCROLL_HEIGHT }, 300, "swing");
+        }, 100);   
+      }
+      
   },
 
   slide: function (fragment){
