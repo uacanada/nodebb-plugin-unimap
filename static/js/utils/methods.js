@@ -18,19 +18,22 @@ define('utils/methods', ["core/variables" /*   Global object UniMap  */], functi
       this.isVisible = state;
     },
   
-    addMarker: function() {
+    addMarker: function() { 
       if (this.isAnimating) return;
       if (this.isVisible) return this.cleanMarker();  // Exit if the marker is already visible
       this.toggleVisibility(true); 
       this.isAnimating = true;
       $('body').addClass('addPlaceMode')
-      $('#geocoderSearchbox').addClass('show')
       $('#ua-horizontal-buttons-wrapper').addClass('hidden')
 
       if($('body').hasClass('cards-opened')){
         UniMap.api.removeCards()
       }
      
+      if(UniMap.isMapBoxKeyExist){
+        $('#geocoderSearchbox').addClass('show')
+      }
+
       const mapContainer = $('#uacamap');
       const targetDiv = $('#targetForNewPlace');
       const wrapper =  $('#targetForNewPlaceWrapper');
@@ -46,6 +49,7 @@ define('utils/methods', ["core/variables" /*   Global object UniMap  */], functi
         'z-index': 1000
       });
       UniMap.api.contextButtonText({text:'Drag map to refine spot',delay:ANIMATION_DURATION,to:UniMap.contextButton.router.addplace})
+      UniMap.api.scrollableBottomPanel.close()
      
       targetDiv.animate({
         left: `${targetPosition.left}px`,

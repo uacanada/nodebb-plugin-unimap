@@ -7,10 +7,10 @@
       "bottomRightCorner": "10, -20",
       "topLeftCorner": "60, -150",
       "mapTitle": "UniMap Configuration",
-      "heroTitle": "MANAGE",
+      "heroTitle": "UniMap",
       "heroSubtitle": "Your Mapping Dashboard Awaits",
-      "altContentTitle": "Alternate Version for lang ALT",
-      "altContentTrigger": "ALT",
+      "altContentTitle": "Translation to Alt",
+      "altContentTrigger": "Alt",
       "unregisteredUserAlert": "Please register <a href=\"/register\">here</a>",
       "emptyTabMessage": "<div class=\"mt-3 p-3 text-center fs-5\"><p><i class=\"fa-solid fa-eye-slash\"></i> This tab is currently empty. </p><p class=\"newLocationOpenMarker btn btn-primary\">Would you like to add your own location to the map?</p></div>",
       "locationSharingErrorAlert": "The location must be specified: <ul class=\"try-locate-me list-group p-0 mt-2\"><li class=\"list-group-item\"><i class=\"fa-solid fa-location-arrow\"></i> Allow geolocation</li><li class=\"list-group-item\"><i class=\"fa-regular fa-hand-point-down\"></i> Or select a by finger</li><li class=\"list-group-item\"><i class=\"fa-solid fa-magnifying-glass\"></i> Or search Street Address</li></ul>",
@@ -35,70 +35,169 @@
         {
           "province": "US",
           "provinceTitle": "United States"
+        },
+        {
+          "province": "XX",
+          "provinceTitle": "Some state or province"
         }
       ],
+      
       "tabCategories": [
         {
-          "color": "#004683",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "footer": "",
-          "icon": "fa-map",
-          "placeByTagCollector": "place",
-          "slug": "all",
-          "title": "All places"
+              "color": "#004683",
+              "description": "All places",
+              "footer": "",
+              "icon": "fa-map",
+              "placeByTagCollector": "place",
+              "slug": "all",
+              "title": "All places"
         },
         {
-          "color": "#095bff",
-          "description": "Suspendisse et nunc non orci suscipit aliquam.",
-          "footer": "",
-          "icon": "fa-calendar-check",
-          "placeByTagCollector": "event",
-          "slug": "events",
-          "title": "Events & Heritage"
+              "color": "#095bff",
+              "description": "List of events on the map.",
+              "footer": "",
+              "icon": "fa-calendar-check",
+              "placeByTagCollector": "event",
+              "slug": "events",
+              "title": "Events"
+        },
+        {
+              "color": "#fe7606",
+              "description": "Locations of small businesses on the map.",
+              "footer": "",
+              "icon": "fa-store",
+              "placeByTagCollector": "",
+              "slug": "smallbusiness",
+              "title": " Small Business"
+        },
+        {
+              "color": "#25b636",
+              "description": "Discover parks, recreational areas, and natural beauty spots.",
+              "footer": "",
+              "icon": "fa-tree",
+              "placeByTagCollector": "park,forest,hike,campsite,bbq",
+              "slug": "parks",
+              "title": "Parks and Recreation"
         }
-      ],
+    ],
+
       "subCategories": [
         {
-          "cid": "1",
-          "cidname": "Events",
-          "icon": "fa-people-robbery",
-          "name": "Meetups Events",
-          "parents": "[\"events\"]",
-          "slug": "meetups"
+              "cid": "1",
+              "cidname": "Announcements",
+              "icon": "fa-people-robbery",
+              "name": "Local Meetups",
+              "parents": "[\"all\"]",
+              "slug": "meetups",
+              "visibleOnlyWhenChosen": "off"
         },
         {
-          "cid": "1",
-          "cidname": "HELP",
-          "icon": "fa-hand-holding-heart",
-          "name": "Online Assistance",
-          "parents": "[\"all\"]",
-          "slug": "onlineassist"
+              "cid": "1",
+              "cidname": "HELP",
+              "icon": "fa-hand-holding-heart",
+              "name": "Online Assistance",
+              "parents": "[\"all\"]",
+              "slug": "onlineassist",
+              "visibleOnlyWhenChosen": "off"
+        },
+        {
+              "cid": "2",
+              "cidname": "General Discussion",
+              "icon": "fa-shop",
+              "name": "Retail Shops",
+              "parents": "[\" smallbusiness\"]",
+              "slug": "retailshops",
+              "visibleOnlyWhenChosen": "off"
+        },
+        {
+              "cid": "2",
+              "cidname": "General Discussion",
+              "icon": "fa-mug-saucer",
+              "name": "Cafés and Bakeries",
+              "parents": "[\" smallbusiness\"]",
+              "slug": "cafes",
+              "visibleOnlyWhenChosen": "off"
+        },
+        {
+              "cid": "2",
+              "cidname": "General Discussion",
+              "icon": "fa-person-hiking",
+              "name": "Nature Trails",
+              "parents": "[\"parks\"]",
+              "slug": "trails",
+              "visibleOnlyWhenChosen": "off"
+        },
+        {
+              "cid": "2",
+              "cidname": "General Discussion",
+              "icon": "fa-umbrella-beach",
+              "name": "Waterfront Areas",
+              "parents": "[\"parks\"]",
+              "slug": "waterfront",
+              "visibleOnlyWhenChosen": "off"
+        },
+        {
+              "cid": "1",
+              "cidname": "Announcements",
+              "icon": "fa-champagne-glasses",
+              "name": "Seasonal Celebrations",
+              "parents": "[\"events\"]",
+              "slug": "seasonal",
+              "visibleOnlyWhenChosen": "off"
+        },
+        {
+              "cid": "1",
+              "cidname": "Announcements",
+              "icon": "fa-user-graduate",
+              "name": "Educational Seminars",
+              "parents": "[\"all\",\"events\"]",
+              "slug": "seminars",
+              "visibleOnlyWhenChosen": "off"
         }
       ],
+
       "eventCategories": [
         {
           "name": "Meetups",
           "slug": "meetups"
         },
         {
-          "name": "Walks",
-          "slug": "walks"
-        }
-      ],
-      "advMarkers": [
+          "name": "Networking",
+          "slug": "networking"
+        },
         {
-          "advMarkerImg": "/assets/plugins/nodebb-plugin-unimap/icons/placeMarker.png",
-          "advMarkerTags": "tag1,tag2,tag3,sponsored",
-          "card": "Lorem ipsum dolor sit amet.",
-          "color": "#fe62bd",
-          "icon": "fa-star-of-life",
-          "id": "sponsored",
-          "latlng": "49.28324,-123.11989",
-          "popup": "<strong>Lorem ipsum dolor sit amet.</strong>",
-          "title": "Lorem Ipsum",
-          "url": "/admin/plugins/unimap"
+          "name": "Concerts",
+          "slug": "concerts"
+        },
+        {
+          "name": "Exhibitions",
+          "slug": "exhibitions"
+        },
+        {
+          "name": "Workshops",
+          "slug": "workshops"
+        },
+        {
+          "name": "Festivals",
+          "slug": "festivals"
         }
       ],
+      
+      "advMarkers": [
+          {
+                "advMarkerImg": "/assets/plugins/nodebb-plugin-unimap/icons/placeMarker.png",
+                "advMarkerTags": "howto,sponsored,unimap",
+                "card": "To perform the initial setup, navigate to ACP <a href=\"/admin/plugins/unimap\">/admin/plugins/unimap</a> and add the initial content!\r\n",
+                "color": "#ff0a0a",
+                "icon": "fa-circle-question",
+                "id": "sponsored",
+                "latlng": "49.28324,-123.11989",
+                "popup": "To perform the initial setup, navigate to ACP <a href=\"/admin/plugins/unimap\">/admin/plugins/unimap</a> and add the initial content.\r\n",
+                "title": "Configure Your Plugin!",
+                "url": "/admin/plugins/unimap"
+          }
+      ],
+
       "slogans": [
         {
           "slogan": "Tailor your mapping experience with precision. Dive into settings now."
