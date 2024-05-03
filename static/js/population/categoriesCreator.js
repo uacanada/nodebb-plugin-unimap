@@ -77,12 +77,16 @@ define('population/swipeDetectors',["core/variables" /*   Global object UniMap  
 	const createTabs = () => {
 		try {
 			
-			UniMap.TEMP.bottomPanelCategoryButtons = [UniMap.api.createBotomPanelCategoryButton({ color:'#01d61d', icon:'fa-info', slug:'widgets' }, 0)]
+			UniMap.TEMP.bottomPanelCategoryButtons = [
+				UniMap.api.createBotomPanelCategoryButton({ color:'#818181', icon:'fa-chevron-down', slug:'close-panel' }, 0),
+				UniMap.api.createBotomPanelCategoryButton({ color:'#01d61d', icon:'fa-info', slug:'widgets' }, 0)
+			]
 			ajaxify.data.UniMapSettings.tabCategories.forEach((tab, index) => { 
 				handleTabCategories(UniMap, tab, index+1); 
 				UniMap.TEMP.bottomPanelCategoryButtons.push(UniMap.api.createBotomPanelCategoryButton(tab, index+1))
 			});
 			let innerButtonsHtml = UniMap.TEMP.bottomPanelCategoryButtons.join('');
+
 			UniMap.fragment.createFragment('bottomPanelCategoryButtons', `<div class="swiper-wrapper">${innerButtonsHtml}</div>`);
 			UniMap.TEMP.bottomPanelCategoryButtons = null;
 			innerButtonsHtml = null;

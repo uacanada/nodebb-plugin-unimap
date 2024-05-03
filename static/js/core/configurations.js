@@ -235,15 +235,6 @@ define('core/configuration', function (require) {
         
         const myFullscreen = UniMap.L.Control.Fullscreen.extend({ options: {  pseudoFullscreenClass: "fa fa-expand" }  });
         UniMap.mapLayers.fsControl = new myFullscreen({ position: "bottomright" });
-            
-        if (app.user.isAdmin) {
-            // UniMap.mapLayers.menuControlButton = new (UniMap.api.addLeafletButton({classes: 'expandRightButtons', title: 'Expand Menu', icon: 'fa fas fa-solid fa-ellipsis-vertical',btnclasses:'btn-warning'}));
-            //UniMap.mapLayers.bottomPanelControlAll = new (UniMap.api.addLeafletButton(   {classes: 'showBottomPanel', title: 'Show Bottom Panel', icon: 'fa fas fa-solid fa-people-roof',     btnclasses:'btn-info',attributes:`data-ua-content-id="tab-all"`}));
-           // UniMap.mapLayers.bottomPanelControlEvents = new (UniMap.api.addLeafletButton({classes: 'showBottomPanel', title: 'Show Bottom Panel', icon: 'fa far fa-regular fa-calendar-check',btnclasses:'btn-info',attributes:`data-ua-content-id="tab-events"`}));
-           
-            
-        }
-        
         UniMap.hiddenControls.geocoder = UniMap.L.Control.geocoder({
             defaultMarkGeocode: false,
             position: "topright",

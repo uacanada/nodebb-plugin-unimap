@@ -212,6 +212,8 @@ UniMap.api.scrollableBottomPanel = {
   },
 
   open: async function(reason) {
+      UniMap.console.log('scrollableBottomPanel.open ',reason)
+      if(reason === "tab-close-panel") UniMap.api.scrollableBottomPanel.close()
       let {buttonIndex,contentId} = await UniMap.api.loadTabToBottomPanel(reason)
       const panel = this.getPanel();
       panel.show().attr('aria-hidden', 'false');
