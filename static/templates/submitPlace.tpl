@@ -60,7 +60,7 @@
 
                             <div class="col-12 col-sm-6 has-validation">
                                 <div class="input-group ">
-                                    <span class="input-group-text"> <i class="fa-brands fa-canadian-maple-leaf"></i>
+                                    <span class="input-group-text"> <i class="fa-solid fa-globe"></i>
                                     </span>
                                     <select id="location-province" name="province" class="form-select"
                                         aria-label="province" required>
