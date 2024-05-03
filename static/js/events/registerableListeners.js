@@ -320,7 +320,8 @@ zoomendHandler() {
 		  '.newLocationCancelButton': 	() => UniMap.api.locationSelection.cleanMarker(),
 		  '.newLocationOpenMarker': 	() => UniMap.api.locationSelection.addMarker(),
 		  '.showBottomPanel':			() => UniMap.api.scrollableBottomPanel.open(findEl('[data-ua-content-id]')),
-		  '.sheet-spacer':		        () => UniMap.api.scrollableBottomPanel.close() 
+		  '.sheet-spacer':		        () => UniMap.api.scrollableBottomPanel.close(), 
+		  '.minus-close-button':		() => UniMap.api.scrollableBottomPanel.close()
 		};
 	  
 		for (const selector in actions) {
