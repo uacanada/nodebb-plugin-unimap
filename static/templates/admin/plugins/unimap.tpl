@@ -425,7 +425,7 @@
 
 					<h2 class="tracking-tight settings-header mb-3">Expert Settings</h2>
 
-					<p><button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal"
+					<p class="mb-3"><button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal"
 							class="export-settings-unimap my-3 d-block btn btn-sm btn-primary" type="button">
 							<i class="fa fa-download"></i> Export Settings as JSON
 						</button></p>
@@ -686,27 +686,24 @@
 									<small>Input the confirmation text to proceed with settings management.</small>
 
 
-									<h4>Replacing Map Locations with New JSON</h4>
-									<div class="input-group mt-5">
-										<input type="text" id="reImportPlacesInput" class="form-control"
-											placeholder="ReImport Places from JSON" aria-label="Reimport places"
-											aria-describedby="reimportPlaces">
-										<button class="btn btn-danger" type="button" id="reImportPlaces">
-											<i class="fa fa-arrows-rotate"></i> Execute Places Replacement
-										</button>
-									</div>
+									<h4 class="mt-5">Replacing Map Locations with New JSON</h4>
 									<small>This setting allows for the re-importation of your places. Be cautious, as
 										you will replace the current places! The JSON must be an array of objects like
-										<code>[{Place1}, {Place2}, {Place3}]</code>. </br>
+										<code><pre>[{}, {}, {}]</pre></code>. </br>
 										Note that importing locations does not affect the location topics; the topics
 										will remain untouched. It is important to ensure that the topic IDs in the JSON
 										match the desired topics on the forum.</br>
 										You can back up your current places by copying only the content within the
 										"placesArray" key from the following API <a
 											href="/api/v3/plugins/map/getplaces">api/v3/plugins/map/getplaces</a>.</small>
-
-
-
+									<div class="input-group mt-5">
+										<input type="text" id="reImportPlacesInput" class="form-control"
+											placeholder="ReImport Places from JSON [obj{}, obj{}, obj{}]" aria-label="Reimport places"
+											aria-describedby="reimportPlaces">
+										<button class="btn btn-danger" type="button" id="reImportPlaces">
+											<i class="fa fa-arrows-rotate"></i> Execute Places Replacement
+										</button>
+									</div>
 
 								</div>
 							</div>
