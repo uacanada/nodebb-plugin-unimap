@@ -326,7 +326,7 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 						fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: newPlacesJson})
 						.then(response => response.json())
 						.then(data => {
-							if(data.response && data.status.code == "success"){
+							if(data.response && data.status.code == "ok"){
 								instance.rebuildAndRestart();
 								bootbox.alert('Places have been reimported.');
 								console.log(data)
