@@ -50,7 +50,6 @@ async function switchTab(direction) {
     UniMap.swipers.bottomPanelCategoryButtons.updateActiveIndex()
     UniMap.swipers.bottomPanelCategoryButtons.updateSlidesClasses()
     $('#bottomPanelCategoryButtons .swiper-slide[data-ua-content-id='+fragment_id+']').addClass("active-tab-button");
-    UniMap.console.log({currentIndex,nextIndex,slidesCount,fragment_id})
   },200)
 
  
@@ -138,7 +137,9 @@ UniMap.api.addCategoryButtons = async (buttonIndex,contentId) => {
   $('#bottomPanelCategoryButtons .swiper-slide[data-ua-content-id='+contentId+']').addClass("active-tab-button");
   UniMap.swipers.bottomPanelCategoryButtons.updateActiveIndex(buttonIndex)
   UniMap.swipers.bottomPanelCategoryButtons.updateSlidesClasses()
-
+  UniMap.api.fixBottomPanelTabsPosition()
+  
+  
 
 }
 

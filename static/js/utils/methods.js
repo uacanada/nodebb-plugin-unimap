@@ -577,7 +577,25 @@ define('utils/methods', ["core/variables" /*   Global object UniMap  */], functi
   };
   
 
- 
+  UniMap.api.getScrollbarWidth = () => {
+    const outer = document.createElement('div');
+    outer.style.visibility = 'hidden';
+    outer.style.overflow = 'scroll';
+    outer.style.width = '50px';
+    outer.style.height = '50px';
+    document.body.appendChild(outer);
+    const scrollbarWidth = outer.offsetWidth - outer.clientWidth;
+    document.body.removeChild(outer);
+    return scrollbarWidth;
+  }
+
+  UniMap.api.fixBottomPanelTabsPosition = () => {
+    const scWidth = UniMap.api.getScrollbarWidth()
+    if(scWidth){
+      const shift = Number(scWidth) / 2;
+      $('#bottomPanelCategoryButtons').css({transform:"translate(-"+shift+"px, 0px)"})
+    }
+  }
 
   UniMap.api.setCategoryAndOpenCards = (category) => {
     UniMap.api.rewriteTabsOnCatChange(category);
