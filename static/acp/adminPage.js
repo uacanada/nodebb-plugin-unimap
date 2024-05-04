@@ -323,18 +323,18 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 					if (!config.ok) throw new Error("Failed to fetch config for CSRF token");
 					const configJson = await config.json();
 					const csrfToken = configJson.csrf_token;
-						fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: newPlacesJson})
+						fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: newPlacesJson.toString()})
 						.then(response => response.json())
 						.then(data => {
 		
 		
 						console.log("Try reimport places:",data,newPlacesJson);
 		
-						if(data.response && data.response.code == "ok"){
+						if(data.response && data.status.code == "ok"){
 							instance.rebuildAndRestart();
 							bootbox.alert('Places have been reimported.');
 						} else {
-							bootbox.alert('Error: '+data.response.code);
+							bootbox.alert('Error: '+data.status.code);
 						}
 		
 						
