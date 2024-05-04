@@ -251,9 +251,6 @@
           <div class="comment-content d-flex align-items-start">
               <div class="flex-grow-1">
                   ${comment.content}
-                  <a class="float-end" href="/post/${comment.pid}">
-                      <i class="fa-regular fa-comment-dots fs-3"></i>
-                  </a>
               </div>
           </div>
           
