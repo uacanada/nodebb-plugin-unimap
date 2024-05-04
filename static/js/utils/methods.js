@@ -534,9 +534,9 @@ define('utils/methods', ["core/variables" /*   Global object UniMap  */], functi
       <div class="p-1 d-flex flex-column align-items-start">
         <div class="ua-popup-codes">
           <code>${addressIcon} Address not available</code></br>
-          <code>🗺️ Enter address details manually in the next step if known</code></br>
-          <code>🧭 Latitude: ${lat.toFixed(12)}</code></br>
-          <code>🧭 Longitude: ${lng.toFixed(12)}</code>
+          <code>🗺️ Enter address details manually in the next step</code></br>
+          <code>🧭 Lat: ${lat.toFixed(10)}</code></br>
+          <code>🧭 Lng: ${lng.toFixed(10)}</code>
         </div>
         
         <div class="d-flex mt-2">

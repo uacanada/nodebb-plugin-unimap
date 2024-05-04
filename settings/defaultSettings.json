@@ -3,7 +3,7 @@
       "alwaysUseDefaultLocation": "",
       "defaultZoom": "11",
       "maxZoomOut": "3",
-      "mapBoxApiKey": "goto: docs.mapbox.com/api",
+      "mapBoxApiKey": "docs.mapbox.com/api",
       "bottomRightCorner": "10, -20",
       "topLeftCorner": "60, -150",
       "mapTitle": "UniMap Configuration",

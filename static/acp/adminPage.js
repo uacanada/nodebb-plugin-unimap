@@ -122,6 +122,7 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 		$(document).on('click', '#exportJson', exportSettingsJson);
 		$(document).on('click', '#resetSettings', resetSettings);
 		$(document).on('click', '#save', saveSettings);
+		$(document).on('click', '#reImportPlaces', reImportPlaces);
 
 		// TODO add off for eventListeners
 
@@ -306,6 +307,43 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 				console.log("Error:", error);
 			  });		
 	}
+
+
+	async function reImportPlaces(){
+
+		const newPlaces = document.getElementById("reImportPlacesInput").value;
+		
+		bootbox.confirm('Click confirm if you want to reimport locations on the map. Careful, you may lose important data if you import incorrect JSON.', async function (confirm) {
+			if (confirm) {
+				const config = await fetch("/api/config");
+				if (!config.ok) throw new Error("Failed to fetch config for CSRF token");
+				const configJson = await config.json();
+				const csrfToken = configJson.csrf_token;
+					fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: '{"newPlaces":'+newPlaces+'}' })
+					.then(response => response.json())
+					  .then(data => {
+	
+	
+					console.log("Try reimport places:",data);
+	
+					if(data.response){
+						instance.rebuildAndRestart();
+						bootbox.alert('Places have been reimported.');
+					} else {
+						bootbox.alert('ERROR');
+					}
+	
+					
+				  })
+				  .catch((error) => {
+					bootbox.alert('Failed to reimport places, please check the browser console logs.');
+					console.log("Error:", error);
+				  });
+			}
+		})
+
+	}
+
 
 	async function resetSettings(){
 		settings.save('unimap', $('<form></form>'))

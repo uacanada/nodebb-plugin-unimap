@@ -514,9 +514,15 @@
 								data-bs-parent="#acpAccordion">
 								<div class="accordion-body">
 								<button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal" class="export-settings-unimap my-3 d-block btn btn-sm btn-primary" type="button">
-								<i class="fa fa-download"></i> Export Settings as JSON
-							  </button>  
+									<i class="fa fa-download"></i> Export Settings as JSON
+							    </button>  
 
+								<div class="input-group mt-5">
+									<input type="text" id="reImportPlacesInput" class="form-control" placeholder="ReImport Places from JSON" aria-label="Reimport places" aria-describedby="reimportPlaces">
+									<button class="btn btn-danger" type="button" id="reImportPlaces">
+									<i class="fa fa-arrows-rotate"></i> Execute Re-Import
+									</button>
+							  	</div>
 
 									<div class="mb-5">
 										<label class="form-label" for="mapPageRouter">Map Page Router</label>
