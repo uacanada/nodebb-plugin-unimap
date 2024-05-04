@@ -256,9 +256,10 @@ a.ua-popup-link:hover{
 }
 .leaflet-popup-content {
   margin:0 .25rem 0 0.25rem;
-  font-size: 0.7rem;
+  font-size: 0.95rem;
   min-height: 5px;
-  max-width: 220px;
+  max-width: 260px;
+  line-height: 1.1;
 }
 
 .leaflet-popup-content .list-group-flush .list-group-item {
