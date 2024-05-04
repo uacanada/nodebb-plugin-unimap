@@ -317,7 +317,7 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 		bootbox.confirm('Click confirm if you want to reimport locations on the map. Careful, you may lose important data if you import incorrect JSON.', async function (confirm) {
 			if (confirm) {
 				try {
-					const newPlaces = JSON.parse(document.getElementById("reImportPlacesInput").value);
+					const newPlaces = JSON.stringify(JSON.parse(document.getElementById("reImportPlacesInput").value))
 					const newPlacesJson = JSON.stringify({newPlaces:newPlaces})
 					const config = await fetch("/api/config");
 					if (!config.ok) throw new Error("Failed to fetch config for CSRF token");
