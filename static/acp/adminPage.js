@@ -307,46 +307,48 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 				console.log("Error:", error);
 			  });		
 	}
+	
 
-
-	async function reImportPlaces(){
-
-
-		
-		
+	async function reImportPlaces() {
 		bootbox.confirm('Click confirm if you want to reimport locations on the map. Careful, you may lose important data if you import incorrect JSON.', async function (confirm) {
 			if (confirm) {
 				try {
-					const newPlaces = JSON.stringify(JSON.parse(document.getElementById("reImportPlacesInput").value))
-					const newPlacesJson = JSON.stringify({newPlaces:newPlaces})
+					const newPlaces = JSON.parse(document.getElementById("reImportPlacesInput").value);
+					const newPlacesJson = JSON.stringify({ newPlaces }); 
 					const config = await fetch("/api/config");
 					if (!config.ok) throw new Error("Failed to fetch config for CSRF token");
 					const configJson = await config.json();
 					const csrfToken = configJson.csrf_token;
-						fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: newPlacesJson})
-						.then(response => response.json())
-						.then(data => {
-							if(data.response && data.status.code == "ok"){
-								instance.rebuildAndRestart();
-								bootbox.alert('Places have been reimported.');
-								console.log(data)
-							} else {
-								bootbox.alert('Error: '+data.status.code);
-							}
+					fetch('/api/v3/plugins/unimap/reImportPlaces', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'x-csrf-token': csrfToken
+						},
+						body: newPlacesJson
+					})
+					.then(response => response.json())
+					.then(data => {
+						if (data.response && data.status.code === "ok") {
+							instance.rebuildAndRestart();
+							bootbox.alert('Places have been reimported.');
+							console.log(data);
+						} else {
+							bootbox.alert('Error: ' + data.status.code);
+						}
 					})
 					.catch((error) => {
 						bootbox.alert('Failed to reimport places, please check the browser console logs.');
-						console.log("Error:", error);
+						console.error("Error:", error);
 					});
 				} catch (error) {
 					bootbox.alert('Failed to reimport places, check the browser console logs.');
-						console.log("Error:", error);
+					console.error("Error:", error);
 				}
-				
 			}
-		})
-
+		});
 	}
+	
 
 
 	async function resetSettings(){
