@@ -142,6 +142,40 @@
 							</div>
 
 
+							<div class="accordion mb-5" id="acpAccordionMb">
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingExpert">
+										<button
+											class="accordion-button collapsed tracking-tight settings-header bg-primary text-bg-primary"
+											type="button" data-bs-toggle="collapse" data-bs-target="#collapseContextButton"
+											aria-expanded="false" aria-controls="collapseContextButton">
+											Context Buttons
+										</button>
+									</h2>
+									<div id="collapseContextButton" class="accordion-collapse collapse"
+										aria-labelledby="headingExpert" data-bs-parent="#acpAccordionMb">
+										<div class="accordion-body">
+											<div class="mb-5">
+												<label class="form-label" for="contextButtonSlide">Allowed HTML with
+													Bootstrap + FontAwesome classes</label>
+												<div id="contextButtonSlideEditor"></div>
+												<textarea type="text" id="contextButtonSlide" name="contextButtonSlide"
+													class="d-none ace-editor-textarea"></textarea>
+												<small class="form-text">
+													Customize the context buttons that will appear at the bottom of the screen.
+													You can utilize these buttons to provide links or to trigger off-canvas
+													panels. Knowledge of HTML and Bootstrap is essential to craft effective
+													buttons. Consider using standard Bootstrap classes and FontAwesome icons to
+													ensure compatibility and visual coherence.
+												</small>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
 							<div class="mb-5">
 								<label class="form-label d-block" for="placeTopicTag">Place Topic Tag</label>
 								<small class="form-text"> Define a unique tag for your forum. This tag will be used to
@@ -425,44 +459,13 @@
 
 					<h2 class="tracking-tight settings-header mb-3">Expert Settings</h2>
 
-					<p class="mb-3"><button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal"
+					<p class="mb-5"><button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal"
 							class="export-settings-unimap my-3 d-block btn btn-sm btn-primary" type="button">
 							<i class="fa fa-download"></i> Export Settings as JSON
 						</button></p>
 
 
-					<div class="accordion mb-5" id="acpAccordionMb">
-						<div class="accordion-item">
-							<h2 class="accordion-header" id="headingExpert">
-								<button
-									class="accordion-button collapsed tracking-tight settings-header bg-primary text-bg-primary"
-									type="button" data-bs-toggle="collapse" data-bs-target="#collapseContextButton"
-									aria-expanded="false" aria-controls="collapseContextButton">
-									Context Buttons
-								</button>
-							</h2>
-							<div id="collapseContextButton" class="accordion-collapse collapse"
-								aria-labelledby="headingExpert" data-bs-parent="#acpAccordionMb">
-								<div class="accordion-body">
-									<div class="mb-5">
-										<label class="form-label" for="contextButtonSlide">HTML and
-											Bootstrap+FontAwesome classes</label>
-										<div id="contextButtonSlideEditor"></div>
-										<textarea type="text" id="contextButtonSlide" name="contextButtonSlide"
-											class="d-none ace-editor-textarea"></textarea>
-										<small class="form-text">
-											Customize the context buttons that will appear at the bottom of the screen.
-											You can utilize these buttons to provide links or to trigger off-canvas
-											panels. Knowledge of HTML and Bootstrap is essential to craft effective
-											buttons. Consider using standard Bootstrap classes and FontAwesome icons to
-											ensure compatibility and visual coherence.
-										</small>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 
 
 					<div class="accordion mb-5" id="placeInstructionsAccordion">
@@ -689,14 +692,13 @@
 									<h4 class="mt-5">Replacing Map Locations with New JSON</h4>
 									<small>This setting allows for the re-importation of your places. Be cautious, as
 										you will replace the current places! The JSON must be an array of objects like
-										<code><pre>[{}, {}, {}]</pre></code>. </br>
+										<code><pre>[{place1}, {place2}, {place#}]</pre></code></br>
 										Note that importing locations does not affect the location topics; the topics
 										will remain untouched. It is important to ensure that the topic IDs in the JSON
 										match the desired topics on the forum.</br>
 										You can back up your current places by copying only the content within the
-										"placesArray" key from the following API <a
-											href="/api/v3/plugins/map/getplaces">api/v3/plugins/map/getplaces</a>.</small>
-									<div class="input-group mt-5">
+										"placesArray" key from the following API <a target="_blank"	href="/api/v3/plugins/map/getplaces">api/v3/plugins/map/getplaces</a></small>
+									<div class="input-group mt-1">
 										<input type="text" id="reImportPlacesInput" class="form-control"
 											placeholder="ReImport Places from JSON [obj{}, obj{}, obj{}]" aria-label="Reimport places"
 											aria-describedby="reimportPlaces">
