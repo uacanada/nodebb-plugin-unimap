@@ -23,18 +23,26 @@
 							<div class="mb-5">
 								<label class="form-label d-block" for="mapBoxApiKey">MapBox API Key</label>
 								<div class="d-none gradient-msg my-3" id="msg-about-api">
-								
-								<p>🌀 Why MapBox API Key Recommended:</p>
-								<ul>
-								  <li>Finds latitude and longitude from an address input.</li>
-								  <li>Derives the address by clicking on a map coordinate.</li>
-								  <li>Offers MapBox's advanced map customization.</li>
-								</ul>
-								<p><i class="fa-solid fa-gift"></i> Use MapBox’s free tier for less trafficked sites. <strong><i class="fa-solid fa-shield-halved"></i> Security Tip:</strong> Configure the key to operate only on your domain via MapBox settings to secure it against misuse.</p>
-								<p><strong>Without the key, functionality is reduced to OpenStreetMap basics, where users can only add new locations by pinning on the map (without geocoding features).</strong></p>
-								<p>Get your free API key for Mapbox on the page <a target="_blank" href="https://account.mapbox.com/auth/signup/" style="color: white;border: 1px solid;padding: 0.2rem 0.5rem;">account.mapbox.com</a></p>
-							
-							  </div>
+
+									<p>🌀 Why MapBox API Key Recommended:</p>
+									<ul>
+										<li>Finds latitude and longitude from an address input.</li>
+										<li>Derives the address by clicking on a map coordinate.</li>
+										<li>Offers MapBox's advanced map customization.</li>
+									</ul>
+									<p><i class="fa-solid fa-gift"></i> Use MapBox’s free tier for less trafficked
+										sites. <strong><i class="fa-solid fa-shield-halved"></i> Security Tip:</strong>
+										Configure the key to operate only on your domain via MapBox settings to secure
+										it against misuse.</p>
+									<p><strong>Without the key, functionality is reduced to OpenStreetMap basics, where
+											users can only add new locations by pinning on the map (without geocoding
+											features).</strong></p>
+									<p>Get your free API key for Mapbox on the page <a target="_blank"
+											href="https://account.mapbox.com/auth/signup/"
+											style="color: white;border: 1px solid;padding: 0.2rem 0.5rem;">account.mapbox.com</a>
+									</p>
+
+								</div>
 								<input type="text" id="mapBoxApiKey" name="mapBoxApiKey"
 									title="Enter your MapBox API Key" class="form-control  mt-2"
 									placeholder="Enter your MapBox API Key here">
@@ -55,23 +63,30 @@
 
 							<!-- Always Load Default Location Checkbox -->
 							<div class="mb-5 form-check">
-							<input type="checkbox" class="form-check-input" id="alwaysUseDefaultLocation" name="alwaysUseDefaultLocation">
-							<label class="form-check-label" for="alwaysUseDefaultLocation">Always Use Default Location</label>
-							<small class="form-text">If checked, the map will always load on the Initial Map Coordinates, regardless of user's saved location preferences.</small>
+								<input type="checkbox" class="form-check-input" id="alwaysUseDefaultLocation"
+									name="alwaysUseDefaultLocation">
+								<label class="form-check-label" for="alwaysUseDefaultLocation">Always Use Default
+									Location</label>
+								<small class="form-text">If checked, the map will always load on the Initial Map
+									Coordinates, regardless of user's saved location preferences.</small>
 							</div>
 
 							<!-- Default Zoom Level -->
 							<div class="mb-5">
-							<label class="form-label d-block" for="defaultZoom">Default Zoom Level</label>
-							<small class="form-text">Set the default zoom level when the map loads. The larger the number, the closer the zoom.</small>
-							<input type="number" id="defaultZoom" name="defaultZoom" title="Set your default zoom level" class="form-control mt-2" placeholder="10">
+								<label class="form-label d-block" for="defaultZoom">Default Zoom Level</label>
+								<small class="form-text">Set the default zoom level when the map loads. The larger the
+									number, the closer the zoom.</small>
+								<input type="number" id="defaultZoom" name="defaultZoom"
+									title="Set your default zoom level" class="form-control mt-2" placeholder="10">
 							</div>
 
 							<!-- Maximum Zoom Out Level -->
 							<div class="mb-5">
-							<label class="form-label d-block" for="maxZoomOut">Maximum Zoom Out Level</label>
-							<small class="form-text">Define the maximum zoom-out level allowed. The smaller the number, the farther the zoom-out.</small>
-							<input type="number" id="maxZoomOut" name="maxZoomOut" title="Set the maximum zoom-out level" class="form-control mt-2" placeholder="3">
+								<label class="form-label d-block" for="maxZoomOut">Maximum Zoom Out Level</label>
+								<small class="form-text">Define the maximum zoom-out level allowed. The smaller the
+									number, the farther the zoom-out.</small>
+								<input type="number" id="maxZoomOut" name="maxZoomOut"
+									title="Set the maximum zoom-out level" class="form-control mt-2" placeholder="3">
 							</div>
 
 
@@ -80,17 +95,18 @@
 
 
 					<div class="card w-100 bg-light mb-5" style="">
-					<div class="card-header">Homepage Map Display</div>
-					<div class="card-body">
-						<h5 class="card-title">How To Set Map as Homepage</h5>
-						<p class="card-text">To showcase the map on your site's main page, follow these steps:</p>
-						<ol>
-						<li>Navigate to NodeBB settings at <a href="/admin/settings/general#home-page" target="_blank">/admin/settings/general#home-page</a>.</li>
-						<li>Locate the <strong>Home Page Route</strong> dropdown.</li>
-						<li>Select <b>Custom</b> from the options.</li>
-						<li>In the <strong>Custom Route</strong> field, type in <b>map</b></li>
-						</ol>
-					</div>
+						<div class="card-header">Homepage Map Display</div>
+						<div class="card-body">
+							<h5 class="card-title">How To Set Map as Homepage</h5>
+							<p class="card-text">To showcase the map on your site's main page, follow these steps:</p>
+							<ol>
+								<li>Navigate to NodeBB settings at <a href="/admin/settings/general#home-page"
+										target="_blank">/admin/settings/general#home-page</a>.</li>
+								<li>Locate the <strong>Home Page Route</strong> dropdown.</li>
+								<li>Select <b>Custom</b> from the options.</li>
+								<li>In the <strong>Custom Route</strong> field, type in <b>map</b></li>
+							</ol>
+						</div>
 					</div>
 
 
@@ -98,30 +114,32 @@
 						<div class="card-header tracking-tight settings-header">Content</div>
 						<div class="card-body">
 
-						<div class="mb-5">
-						<h5 class="fw-bold tracking-tight settings-header">Map Hero Title</h5>
-						<input type="text" id="heroTitle" name="heroTitle" title="Setup hero Title" class="form-control mt-2">
-						</div>
-
-						<div class="mb-5">
-						<h5 class="fw-bold tracking-tight settings-header">Map Hero Subtitle</h5>
-						<input type="text" id="heroSubtitle" name="heroSubtitle" title="Setup hero SubTitle" class="form-control mt-2">
-						</div>
-
-
-						<div class="mb-5">
-							<h5 class="fw-bold tracking-tight settings-header">Slogans</h5>
-							<div class="mb-3" data-type="sorted-list" data-sorted-list="slogans"
-								data-item-template="admin/plugins/unimap/partials/sorted-list/item-slogan"
-								data-form-template="admin/plugins/unimap/partials/sorted-list/form-slogan">
-								<ul data-type="list" class="list-group mb-2"></ul>
-								<small class="form-text d-block mb-2"> Define multiple dynamic slogans for your
-									map's landing page. These will display in a rotating manner, providing a diverse
-									introduction to your community map on each visit</small>
-								<button type="button" data-type="add" class="btn btn-sm btn-primary">Add
-									slogan</button>
+							<div class="mb-5">
+								<h5 class="fw-bold tracking-tight settings-header">Map Hero Title</h5>
+								<input type="text" id="heroTitle" name="heroTitle" title="Setup hero Title"
+									class="form-control mt-2">
 							</div>
-						</div>
+
+							<div class="mb-5">
+								<h5 class="fw-bold tracking-tight settings-header">Map Hero Subtitle</h5>
+								<input type="text" id="heroSubtitle" name="heroSubtitle" title="Setup hero SubTitle"
+									class="form-control mt-2">
+							</div>
+
+
+							<div class="mb-5">
+								<h5 class="fw-bold tracking-tight settings-header">Slogans</h5>
+								<div class="mb-3" data-type="sorted-list" data-sorted-list="slogans"
+									data-item-template="admin/plugins/unimap/partials/sorted-list/item-slogan"
+									data-form-template="admin/plugins/unimap/partials/sorted-list/form-slogan">
+									<ul data-type="list" class="list-group mb-2"></ul>
+									<small class="form-text d-block mb-2"> Define multiple dynamic slogans for your
+										map's landing page. These will display in a rotating manner, providing a diverse
+										introduction to your community map on each visit</small>
+									<button type="button" data-type="add" class="btn btn-sm btn-primary">Add
+										slogan</button>
+								</div>
+							</div>
 
 
 							<div class="mb-5">
@@ -158,7 +176,7 @@
 									placeholder="E.g. 'UA|CN|MD'">
 							</div>
 
-							
+
 
 
 							<div class="mb-5">
@@ -185,10 +203,10 @@
 
 							<div class="mb-5">
 								<label class="form-label d-block" for="emptyTabMessage">Empty Tab Message</label>
-								<small class="form-text">Enter a custom error message to be displayed when tab is empty</small>
-								<input type="text" id="emptyTabMessage" name="emptyTabMessage"
-									title="Empty Tab Message" class="form-control mt-2"
-									placeholder="Enter your message here">
+								<small class="form-text">Enter a custom error message to be displayed when tab is
+									empty</small>
+								<input type="text" id="emptyTabMessage" name="emptyTabMessage" title="Empty Tab Message"
+									class="form-control mt-2" placeholder="Enter your message here">
 							</div>
 
 							<div class="mt-3">
@@ -217,10 +235,6 @@
 										class="btn btn-light" />
 								</div>
 							</div>
-
-							
-							
-
 
 						</div>
 					</div>
@@ -411,6 +425,10 @@
 
 					<h2 class="tracking-tight settings-header mb-3">Expert Settings</h2>
 
+					<p><button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal"
+							class="export-settings-unimap my-3 d-block btn btn-sm btn-primary" type="button">
+							<i class="fa fa-download"></i> Export Settings as JSON
+						</button></p>
 
 
 					<div class="accordion mb-5" id="acpAccordionMb">
@@ -427,12 +445,17 @@
 								aria-labelledby="headingExpert" data-bs-parent="#acpAccordionMb">
 								<div class="accordion-body">
 									<div class="mb-5">
-										<label class="form-label" for="contextButtonSlide">HTML and Bootstrap+FontAwesome classes</label>
+										<label class="form-label" for="contextButtonSlide">HTML and
+											Bootstrap+FontAwesome classes</label>
 										<div id="contextButtonSlideEditor"></div>
 										<textarea type="text" id="contextButtonSlide" name="contextButtonSlide"
 											class="d-none ace-editor-textarea"></textarea>
 										<small class="form-text">
-										Customize the context buttons that will appear at the bottom of the screen. You can utilize these buttons to provide links or to trigger off-canvas panels. Knowledge of HTML and Bootstrap is essential to craft effective buttons. Consider using standard Bootstrap classes and FontAwesome icons to ensure compatibility and visual coherence.
+											Customize the context buttons that will appear at the bottom of the screen.
+											You can utilize these buttons to provide links or to trigger off-canvas
+											panels. Knowledge of HTML and Bootstrap is essential to craft effective
+											buttons. Consider using standard Bootstrap classes and FontAwesome icons to
+											ensure compatibility and visual coherence.
 										</small>
 
 									</div>
@@ -456,12 +479,17 @@
 								aria-labelledby="placeInstructionsHeading" data-bs-parent="#placeInstructionsAccordion">
 								<div class="accordion-body">
 									<div class="mb-5">
-										<label class="form-label" for="placeInstruction">HTML and Bootstrap+FontAwesome classes</label>
+										<label class="form-label" for="placeInstruction">HTML and Bootstrap+FontAwesome
+											classes</label>
 										<div id="placeInstructionEditor"></div>
 										<textarea type="text" id="placeInstruction" name="placeInstruction"
 											class="d-none ace-editor-textarea"></textarea>
 										<small class="form-text">
-										Enter your customized HTML instructions to guide users in adding a location to the map. These instructions will appear in a bottom sheet popup above a permanent search bar. When crafting your content, consider leading into the search bar functionality as it will always be present at the bottom of the instructions panel.
+											Enter your customized HTML instructions to guide users in adding a location
+											to the map. These instructions will appear in a bottom sheet popup above a
+											permanent search bar. When crafting your content, consider leading into the
+											search bar functionality as it will always be present at the bottom of the
+											instructions panel.
 										</small>
 									</div>
 								</div>
@@ -475,21 +503,27 @@
 							<h2 class="accordion-header" id="advancedJsonSettingsHeading">
 								<button
 									class="accordion-button collapsed tracking-tight settings-header bg-primary text-bg-primary"
-									type="button" data-bs-toggle="collapse" data-bs-target="#advancedJsonSettingsCollapse"
-									aria-expanded="false" aria-controls="advancedJsonSettingsCollapse">
+									type="button" data-bs-toggle="collapse"
+									data-bs-target="#advancedJsonSettingsCollapse" aria-expanded="false"
+									aria-controls="advancedJsonSettingsCollapse">
 									Advanced JSON Settings
 								</button>
 							</h2>
 							<div id="advancedJsonSettingsCollapse" class="accordion-collapse collapse"
-								aria-labelledby="advancedJsonSettingsHeading" data-bs-parent="#advancedJsonSettingsAccordion">
+								aria-labelledby="advancedJsonSettingsHeading"
+								data-bs-parent="#advancedJsonSettingsAccordion">
 								<div class="accordion-body">
 									<div class="mb-5">
-										<label class="form-label" for="jsonInput">Insert your JSON configuration here:</label>
+										<label class="form-label" for="jsonInput">Insert your JSON configuration
+											here:</label>
 										<div id="jsonInputEditor"></div>
 										<textarea type="text" id="jsonInput" name="customExtraSettings"
 											class="d-none ace-editor-textarea"></textarea>
 										<small class="form-text">
-										Use this section to enter custom JSON settings that will enhance the default plugin configurations. Your JSON must be correctly formatted; errors may impair functionality. You are responsible for ensuring the validity of your JSON.
+											Use this section to enter custom JSON settings that will enhance the default
+											plugin configurations. Your JSON must be correctly formatted; errors may
+											impair functionality. You are responsible for ensuring the validity of your
+											JSON.
 										</small>
 									</div>
 								</div>
@@ -507,22 +541,14 @@
 									class="accordion-button collapsed tracking-tight settings-header bg-danger text-bg-danger"
 									type="button" data-bs-toggle="collapse" data-bs-target="#collapseExpert"
 									aria-expanded="false" aria-controls="collapseExpert">
-									Open Expert Settings
+									Danger Zone
 								</button>
 							</h2>
 							<div id="collapseExpert" class="accordion-collapse collapse" aria-labelledby="headingExpert"
 								data-bs-parent="#acpAccordion">
 								<div class="accordion-body">
-								<button id="exportJson" data-bs-toggle="modal" data-bs-target="#exportedJsonModal" class="export-settings-unimap my-3 d-block btn btn-sm btn-primary" type="button">
-									<i class="fa fa-download"></i> Export Settings as JSON
-							    </button>  
 
-								<div class="input-group mt-5">
-									<input type="text" id="reImportPlacesInput" class="form-control" placeholder="ReImport Places from JSON" aria-label="Reimport places" aria-describedby="reimportPlaces">
-									<button class="btn btn-danger" type="button" id="reImportPlaces">
-									<i class="fa fa-arrows-rotate"></i> Execute Re-Import
-									</button>
-							  	</div>
+
 
 									<div class="mb-5">
 										<label class="form-label" for="mapPageRouter">Map Page Router</label>
@@ -614,40 +640,72 @@
 									</div>
 									<h4>Settings Management</h4>
 									<small>
-									  Use this section to manage your plugin settings. You can clear settings from the database, delete location cards, or restore from a backup file.
-									  Note: This will not remove topics associated with locations created by the plugin. To delete those topics, first gather all TIDs via the "getplaces" API.
+										Use this section to manage your plugin settings. You can clear settings from the
+										database, delete location cards, or restore from a backup file.
+										Note: This will not remove topics associated with locations created by the
+										plugin. To delete those topics, first gather all TIDs via the "getplaces" API.
 									</small>
-									
-									
-									
+
+
+
 									<p class="mt-4">
-									  <strong>To apply (replace) default settings from a file:</strong>
-									  <small>Enter the phrase below to replace current settings with defaults from ./node_modules/nodebb-plugin-unimap/settings/defaultSettings.json file</small>
-									  <code class="d-block mt-2">I confirm the resetting and recreation of settings from defaultSettings.json</code> 
-									  OR:
-									  <code class="d-block mt-2">I confirm the resetting and recreation of settings from [CUSTOM SETTINGS FILENAME].json</code> 
+										<strong>To apply (replace) default settings from a file:</strong>
+										<small>Enter the phrase below to replace current settings with defaults from
+											./node_modules/nodebb-plugin-unimap/settings/defaultSettings.json
+											file</small>
+										<code class="d-block mt-2">I confirm the resetting and recreation of settings
+											from defaultSettings.json</code>
+										OR:
+										<code class="d-block mt-2">I confirm the resetting and recreation of settings
+											from [CUSTOM SETTINGS FILENAME].json</code>
 
 									</p>
-									  
+
 									<p class="mt-4">
-									  <strong>To remove plugin settings only:</strong>
-									  <code class="d-block mt-2">I confirm the deletion of settings</code>
+										<strong>To remove plugin settings only:</strong>
+										<code class="d-block mt-2">I confirm the deletion of settings</code>
 									</p>
-									
+
 									<p class="mt-4">
-									  <strong>To completely clear settings and all places from the database:</strong>
-									  <code class="d-block mt-2">I confirm the deletion of ALL settings AND ALL PLACES</code>.<br>
-									  <small>Warning: This action will delete all settings and locations but will not remove associated topics. To backup location data before deletion, access the JSON data at <code>/api/v3/plugins/map/getplaces</code>.</small>
+										<strong>To completely clear settings and all places from the database:</strong>
+										<code class="d-block mt-2">I confirm the deletion of ALL settings AND ALL
+											PLACES</code>.<br>
+										<small>Warning: This action will delete all settings and locations but will not
+											remove associated topics. To backup location data before deletion, access
+											the JSON data at <code>/api/v3/plugins/map/getplaces</code>.</small>
 									</p>
-									
+
 									<div class="input-group mt-5">
-									  <input type="text" id="resetSettingsConfirmation" class="form-control" placeholder="Enter confirmation text" aria-label="Reset Settings" aria-describedby="resetSettings">
-									  <button class="btn btn-danger" type="button" id="resetSettings">
-										<i class="fa fa-arrows-rotate"></i> Execute Setting Reset
-									  </button>
+										<input type="text" id="resetSettingsConfirmation" class="form-control"
+											placeholder="Enter confirmation text" aria-label="Reset Settings"
+											aria-describedby="resetSettings">
+										<button class="btn btn-danger" type="button" id="resetSettings">
+											<i class="fa fa-arrows-rotate"></i> Execute Setting Reset
+										</button>
 									</div>
 									<small>Input the confirmation text to proceed with settings management.</small>
-									
+
+
+									<h4>Replacing Map Locations with New JSON</h4>
+									<div class="input-group mt-5">
+										<input type="text" id="reImportPlacesInput" class="form-control"
+											placeholder="ReImport Places from JSON" aria-label="Reimport places"
+											aria-describedby="reimportPlaces">
+										<button class="btn btn-danger" type="button" id="reImportPlaces">
+											<i class="fa fa-arrows-rotate"></i> Execute Places Replacement
+										</button>
+									</div>
+									<small>This setting allows for the re-importation of your places. Be cautious, as
+										you will replace the current places! The JSON must be an array of objects like
+										<code>[{Place1}, {Place2}, {Place3}]</code>. </br>
+										Note that importing locations does not affect the location topics; the topics
+										will remain untouched. It is important to ensure that the topic IDs in the JSON
+										match the desired topics on the forum.</br>
+										You can back up your current places by copying only the content within the
+										"placesArray" key from the following API <a
+											href="/api/v3/plugins/map/getplaces">api/v3/plugins/map/getplaces</a>.</small>
+
+
 
 
 								</div>
@@ -661,7 +719,7 @@
 
 
 				</div>
-				
+
 			</form>
 
 
