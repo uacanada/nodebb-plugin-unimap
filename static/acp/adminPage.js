@@ -311,34 +311,43 @@ define('admin/plugins/unimap', ['hooks','settings', 'uploader', 'iconSelect', 'b
 
 	async function reImportPlaces(){
 
-		const newPlaces = document.getElementById("reImportPlacesInput").value;
+
+		
 		
 		bootbox.confirm('Click confirm if you want to reimport locations on the map. Careful, you may lose important data if you import incorrect JSON.', async function (confirm) {
 			if (confirm) {
-				const config = await fetch("/api/config");
-				if (!config.ok) throw new Error("Failed to fetch config for CSRF token");
-				const configJson = await config.json();
-				const csrfToken = configJson.csrf_token;
-					fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: '{"newPlaces":'+newPlaces+'}' })
-					.then(response => response.json())
-					  .then(data => {
-	
-	
-					console.log("Try reimport places:",data);
-	
-					if(data.response){
-						instance.rebuildAndRestart();
-						bootbox.alert('Places have been reimported.');
-					} else {
-						bootbox.alert('ERROR');
-					}
-	
-					
-				  })
-				  .catch((error) => {
-					bootbox.alert('Failed to reimport places, please check the browser console logs.');
-					console.log("Error:", error);
-				  });
+				try {
+					const newPlaces = JSON.parse(document.getElementById("reImportPlacesInput").value);
+					const newPlacesJson = JSON.stringify({newPlaces:newPlaces})
+					const config = await fetch("/api/config");
+					if (!config.ok) throw new Error("Failed to fetch config for CSRF token");
+					const configJson = await config.json();
+					const csrfToken = configJson.csrf_token;
+						fetch('/api/v3/plugins/unimap/reImportPlaces', { method: 'POST', headers: {'Content-Type': 'application/json','x-csrf-token': csrfToken}, body: newPlacesJson})
+						.then(response => response.json())
+						.then(data => {
+		
+		
+						console.log("Try reimport places:",data,newPlacesJson);
+		
+						if(data.response && data.response.code == "ok"){
+							instance.rebuildAndRestart();
+							bootbox.alert('Places have been reimported.');
+						} else {
+							bootbox.alert('Error: '+data.response.code);
+						}
+		
+						
+					})
+					.catch((error) => {
+						bootbox.alert('Failed to reimport places, please check the browser console logs.');
+						console.log("Error:", error);
+					});
+				} catch (error) {
+					bootbox.alert('Failed to reimport places, check the browser console logs.');
+						console.log("Error:", error);
+				}
+				
 			}
 		})
 
