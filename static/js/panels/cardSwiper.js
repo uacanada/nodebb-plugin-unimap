@@ -185,21 +185,13 @@
           tid = Number($('.swiper-slide-active .ua-place-card-inner').attr('data-ua-tid'))
         }
 
-
-       
-        
-
         const p = UniMap.allPlaces[tid].json
         const fa_icon = UniMap.allPlaces[tid].marker?.icon
         const placeModal = document.getElementById('ua-place-modal')
         const modalTitle = placeModal.querySelector('#modal-place-title')
         const modalBodyInput = placeModal.querySelector('#placeLoader')
 
-
-
         function setTitle(el){
-          
-
           const author = {
               color: el.data('authorcolor'),
               avatar: el.data('authoravatar'),
@@ -207,10 +199,8 @@
               letter: el.data('authorletter')
           };
 
-         
           const avatarImage = `<img alt="${author.name} Avatar" title="${author.name}" data-uid="${p.uid}" class="p-0 m-0 avatar avatar-rounded me-2" component="user/picture" src="${author.avatar}" style="--avatar-size: 2rem; border-radius: 50%; width: 2rem; height: 2rem;" onerror="this.remove();" itemprop="image"></img>`;
           const avatarDiv = `<div class="me-2 avatar avatar-tooltip not-responsive avatar-rounded d-flex  align-items-center justify-content-center" component="avatar/picture" style="width:2rem; height:2rem; background-color:${author.color};" aria-label="${author.name}" data-bs-original-title="${author.name}"><b>${author.name[0]}</b></div>`
-            
           const avatar = author.avatar ? avatarImage : avatarDiv;
 
           modalTitle.innerHTML = `<div class="d-flex" style="line-height: 2rem;color:${author.color};text-transform: none;">${avatar}${author.name}</div>`;
@@ -657,9 +647,13 @@ function handleSlideChange(e, places, UniMap) {
 
 
 function initializeOrUpdatePlaceModalSwiper() {
-  if (UniMap.swipers && UniMap.swipers.topicPlaceSwiper) {
+  const galleryElement = document.getElementById('topicPlaceGallery');
+
+  if (UniMap.swipers && UniMap.swipers.topicPlaceSwiper && UniMap.swipers.topicPlaceSwiper instanceof UniMap.Swiper) {
     UniMap.swipers.topicPlaceSwiper.destroy(true, true);
   }
+  
+  if(!galleryElement) return;
   UniMap.swipers.topicPlaceSwiper = new UniMap.Swiper("#topicPlaceGallery", {
     slidesPerView: "auto",
     mousewheel: true,
