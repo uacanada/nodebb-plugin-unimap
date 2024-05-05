@@ -34,12 +34,23 @@
       }
     
     }
+
+    UniMap.api.syncMarkerWithSlide = (tid) => {
+      const numericTid = Number(tid);
+      const slide = $(`div[data-slide-tid="${numericTid}"]`);
+      const slideId = Number(slide.attr('data-slide-index'));
+    
+      if (!numericTid || slide.length === 0 || isNaN(slideId)) {
+        return false;
+      } else {
+        UniMap.swipers.cardsCarousel.slideTo(slideId);
+      }
+    };
   
   UniMap.api.pointerMarker = (tid,place) => {
      const {L} = UniMap
       UniMap.api.cleanMarkers()
-      if(!tid || !place.gps) return false  
-      tid = Number(tid)
+      if(!tid || !place.gps) return false
       const markerImg = UniMap.api.getProfileImage(place.json)
       const pointerMarkerIcon = L.divIcon({className: 'pointer-marker', html: `<div class="pointer-marker-icon rounded-circle" style="background: url(${markerImg}) center center / cover no-repeat white; animation:ua-shake-element 400ms ease-in-out both"></div>`, iconSize: [64, 64], iconAnchor: [32, 48],  popupAnchor:  [1, -50]});
       UniMap.pointerMarker = L.marker(place.gps, {icon: pointerMarkerIcon});
@@ -48,12 +59,10 @@
      
       UniMap.pointerMarker.on('click', (e)=> {    
         try {
-          const slide = $('div[data-slide-tid="'+tid+'"]')
-          const slideId = slide.attr('data-slide-index')
-          UniMap.swipers.cardsCarousel.slideTo(Number(slideId)) 
-          // UniMap.map.setView(place.gps,map.getZoom()+1); 
-          UniMap.api.openPlaceModal(tid)  
+               // UniMap.map.setView(place.gps,map.getZoom()+1); 
+          UniMap.api.openPlaceModal(Number(tid))  
           UniMap.pointerMarker.openPopup(); 
+          UniMap.api.syncMarkerWithSlide(tid);
         } catch (error) {
           
         }
