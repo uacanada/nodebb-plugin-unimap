@@ -19,7 +19,7 @@
       UniMap.api.setContextCss()
      // $('.ua-marker-d').removeClass('ua-opened-marker');
       if(UniMap.pointerMarker) {
-        UniMap.pointerMarker.off();
+        //UniMap.pointerMarker.off();
         UniMap.map.removeLayer(UniMap.pointerMarker);
         UniMap.pointerMarker = null
       }
