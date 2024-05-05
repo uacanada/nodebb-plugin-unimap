@@ -19,6 +19,7 @@
       UniMap.api.setContextCss()
      // $('.ua-marker-d').removeClass('ua-opened-marker');
       if(UniMap.pointerMarker) {
+        UniMap.pointerMarker.off();
         UniMap.map.removeLayer(UniMap.pointerMarker);
         UniMap.pointerMarker = null
       }
@@ -31,49 +32,35 @@
       if(forced) {
         UniMap.api.cardsOpened(false)
       }
-  
-     
     
     }
   
   UniMap.api.pointerMarker = (tid,place) => {
-     const {map,L} = UniMap
-       UniMap.api.cleanMarkers()
-      if(!tid)return false  
+     const {L} = UniMap
+      UniMap.api.cleanMarkers()
+      if(!tid || !place.gps) return false  
+      tid = Number(tid)
       const markerImg = UniMap.api.getProfileImage(place.json)
       const pointerMarkerIcon = L.divIcon({className: 'pointer-marker', html: `<div class="pointer-marker-icon rounded-circle" style="background: url(${markerImg}) center center / cover no-repeat white; animation:ua-shake-element 400ms ease-in-out both"></div>`, iconSize: [64, 64], iconAnchor: [32, 48],  popupAnchor:  [1, -50]});
       UniMap.pointerMarker = L.marker(place.gps, {icon: pointerMarkerIcon});
       UniMap.pointerMarker.bindPopup(place.marker._popup._content);
       UniMap.pointerMarker.setZIndexOffset(88888);
-      //place.marker.setZIndexOffset(88880)
-  
-  
-      
-  
-      const slide = $('div[data-slide-tid="'+Number(tid)+'"]')
-      const slideId = slide.attr('data-slide-index')
-      
-  
+     
       UniMap.pointerMarker.on('click', (e)=> {    
-        
         try {
+          const slide = $('div[data-slide-tid="'+tid+'"]')
+          const slideId = slide.attr('data-slide-index')
           UniMap.swipers.cardsCarousel.slideTo(Number(slideId)) 
-          UniMap.map.setView(place.gps,map.getZoom()+1);   
+          // UniMap.map.setView(place.gps,map.getZoom()+1); 
+          UniMap.api.openPlaceModal(tid)  
           UniMap.pointerMarker.openPopup(); 
         } catch (error) {
           
         }
-       
-      
       });
       
-    
-        if(!UniMap.pointerMarker) return 
-  
-  
        
-  
-           let openedMarkerCss = place.neighborsCount ?`.ua-topic-${Number(tid)} { font-weight: bold; opacity: 1!important;}` : `.ua-topic-${Number(tid)} {opacity:0!important}`
+       let openedMarkerCss = place.neighborsCount ?`.ua-topic-${Number(tid)} { font-weight: bold; opacity: 1!important;}` : `.ua-topic-${Number(tid)} {opacity:0!important}`
            openedMarkerCss+=` div[data-slide-tid="${Number(tid)}"] .ua-topic-link .place-pic { width: 4rem!important} div[data-slide-tid="${Number(tid)}"] .card-title{ font-weight: bold;} div[data-slide-tid="${Number(tid)}"] .ua-place-card-inner {0px 6px 8px 0px rgba(0, 0, 0, 0.5)}`
            UniMap.api.setContextCss(openedMarkerCss)
            UniMap.api.cardsOpened(true)
@@ -652,9 +639,6 @@ function handleSlideChange(e, places, UniMap) {
             UniMap.api.openMarker(tid)
         }
         
-        
-       
-
     } else {
       UniMap.api.pointerMarker(false)
       UniMap.map.zoomOut(4)
