@@ -308,9 +308,8 @@
         $("#ua-place-modal").offcanvas("show");
 
         await renderComments(tid)
-        initializeOrUpdatePlaceModalSwiper()
+        initializeOrUpdatePlaceModalSwiper()      
         
-  
   
   }
   
@@ -601,7 +600,6 @@
     }
   }
   
-  
   function handleClick(J, event, UniMap) {
     const slide = $(J.clickedSlide)
     const tid = Number(slide.find('.ua-place-card-inner').attr('data-ua-tid'));
@@ -609,8 +607,7 @@
     const sameTarget = UniMap.previousTid === tid
 
     const isCloseButton = $(event.target).hasClass('removeCards') || $(event.target.parentElement).hasClass('removeCards')
-    const isEditButton = $(event.target).hasClass('edit-place') || $(event.target.parentElement).hasClass('ua-edit-link')
-    if(isCloseButton || isEditButton) return
+    if(isCloseButton) return
    
     if(sameTarget) {
       UniMap.api.openPlaceModal(tid)

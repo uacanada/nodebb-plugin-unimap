@@ -52,6 +52,10 @@ define('forms/editPlace',["core/variables" /*   Global object UniMap  */], funct
     UniMap.form.editPlace = (tid) => {
       const topic_id = tid ? Number(tid) : 0;
       if (!topic_id) return;
+
+      if(ajaxify.currentPage.includes('topic')){
+        ajaxify.go(ajaxify.data.UniMapSettings.mapPageRouter||'/map');
+      }
       
       UniMap.form.reset();
     

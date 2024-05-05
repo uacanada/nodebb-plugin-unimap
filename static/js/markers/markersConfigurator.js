@@ -33,17 +33,6 @@ define('markers/markersConfigurator',["core/variables" /*   Global object UniMap
           UniMap.api.countFilledCategories(placeCategory);
          
           let eventHtml = "";
-          
-          const editLink = app.user?.uid && (app.user.isAdmin || app.user.isGlobalMod || Number(uid) === Number(app.user.uid))
-          ? `<div class="ua-edit-link">
-              <a href="#!" data-place-author="${uid}" data-topic="${tid}" class="edit-place card-link">
-                <i class="fa-regular fa-pen-to-square"></i> Edit
-              </a>
-            </div>`
-          : "";
-
-              
-          
           const profileIcon = UniMap.api.getProfileImage(item);
           const markerTitle = placeTitle || categoryName;
           const cardTitle = eventName ? eventName : placeTitle || markerTitle;
@@ -163,7 +152,6 @@ define('markers/markersConfigurator',["core/variables" /*   Global object UniMap
               ${eventHtml}
               ${bodyText}
               </p>
-              ${editLink}
               </div>
             </div>
           </div>
