@@ -49,13 +49,39 @@ define('forms/editPlace',["core/variables" /*   Global object UniMap  */], funct
         
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     UniMap.form.editPlace = (tid) => {
+      
+      function showErrorModal() {
+        bootbox.alert({
+          title: "Access Denied",
+          message: "You do not have the necessary permissions to perform this action. Please contact an administrator if you believe this is an error.",
+          size: 'small',
+          buttons: {
+              ok: {
+                  label: 'OK',
+                  className: 'btn-danger'
+              }
+          }
+       });
+      }      
       const topic_id = tid ? Number(tid) : 0;
-      if (!topic_id) return;
 
-      if(ajaxify.currentPage.includes('topic')){
-        ajaxify.go(ajaxify.data.UniMapSettings.mapPageRouter||'/map');
-      }
+
+
+
+      if (!topic_id) return showErrorModal();
+
+      
       
       UniMap.form.reset();
     
@@ -64,6 +90,14 @@ define('forms/editPlace',["core/variables" /*   Global object UniMap  */], funct
         .then((x) => {
           if (x?.response?.tid && x?.response?.placeOnMap) {
             const place = x.response.placeOnMap;
+            const isOwner = place.uid === app.user.uid;
+            const isAdmin = app.user.isAdmin;
+
+            if (!isOwner && !isAdmin) {
+               showErrorModal()
+                return false; 
+            }
+
 
             $('#place-tag-input').tagsinput('removeAll');
             $('#place-tag-input').val('')
@@ -124,10 +158,11 @@ define('forms/editPlace',["core/variables" /*   Global object UniMap  */], funct
     
             $("#place-creator-offcanvas").offcanvas("show");
           } else {
-           
+            showErrorModal()
           }
         })
         .catch((error) => {
+          showErrorModal()
           UniMap.console.log("Request failed", error);
         });
     

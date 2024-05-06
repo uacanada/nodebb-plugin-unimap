@@ -185,6 +185,7 @@
           tid = Number($('.swiper-slide-active .ua-place-card-inner').attr('data-ua-tid'))
         }
 
+
         const p = UniMap.allPlaces[tid].json
         const fa_icon = UniMap.allPlaces[tid].marker?.icon
         const placeModal = document.getElementById('ua-place-modal')
@@ -309,6 +310,14 @@
 
         await renderComments(tid)
         initializeOrUpdatePlaceModalSwiper()      
+        
+        const isOwner = p.uid === app.user.uid;
+        const isAdmin = app.user.isAdmin;
+        if (isOwner || isAdmin) {
+            $('.edit-place').removeClass('d-none');
+        }
+        
+        
         
   
   }

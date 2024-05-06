@@ -107,6 +107,6 @@
             $('#topicPlaceGallery .swiper-slide a').off('click').on('click', function(event) {
                 event.preventDefault();
             });
-            
+
         }
     });
