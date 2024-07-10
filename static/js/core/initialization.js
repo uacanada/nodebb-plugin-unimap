@@ -50,6 +50,7 @@ define("core/initialization", [
   methods,
   categoryButtonsSwiper,
   cardSwiper,
+  bottomCard,
   bottomSheets,
   contextButton,
   tabsPopulator,
