@@ -210,45 +210,25 @@ input#ua-location-cover-img {
 }
 
 input#ua-location-cover-img:after {
-  content: '\f03e';
+  content: "\f03e";
   font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 900;
   position: absolute;
-  top: 0px;
-  font-size: 25px;
+  top: 0;
+  font-size: 2rem;
   left: 0;
-  color: #ffffff;
+  color: #f7f7f7;
   text-align: center;
-  background:rgb(67 161 215);
-  text-shadow: 1px 1px 1px #754b89;
+  background: #dddddd;
   right: 0;
   height: 100%;
   vertical-align: middle;
   width: 100%;
-  line-height: 2;
+  line-height: 4rem;
 }
-input#ua-location-cover-img:before {
-  content: 'Image for location ';
-  position: absolute;
-  z-index: 3;
-  color: white;
-  line-height: 1;
-  font-size: 12px;
-  bottom: 3px;
-  text-align: center;
-  width: 100%;
-  left: 0;
-}
-#ua-sidepanel.folded-sidebar { height: 47%!important; bottom: 0;}
-// .opened.folded-sidebar.sidepanel .sidepanel-toggle-container {
-//   bottom: 0;
-//   left: 0;
-//   top: auto;
-//   transition: .2s;
-//   z-index: 1000;
-// }
 
+#ua-sidepanel.folded-sidebar { height: 47%!important; bottom: 0;}
 
 #ua-form-img-holder {
 position:relative;
@@ -423,6 +403,7 @@ img {
 
   .card-title{
     word-break: break-all;
+    letter-spacing: unset;
   }
 
  
@@ -1556,12 +1537,13 @@ body.unimap-page #ua-mainframe {
 }
 
 .image-preview.mainPlaceImg:before {
-  content: '\f2c2';
-  font-family: "Font Awesome 6 Free";
+  content: "Main";
   font-style: normal;
-  color: #00355f;
-  font-size: 2rem;
+  color: #ffffff;
+  background: rgba(17, 33, 56, 0.7);
+  font-size: 0.75rem;
   position: absolute;
-  text-shadow: -2px 1px 4px #293340;
-  top: -5px;
+  bottom: 2rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
 }

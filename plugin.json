@@ -64,6 +64,7 @@
     "panels/cardSwiper": "static/js/panels/cardSwiper.js",
     "panels/bottomSheets": "static/js/panels/bottomSheets.js",
     "panels/contextButton":"static/js/panels/contextButton.js",
+    "panels/bottomCard":"static/js/panels/bottomCard.js",
     "population/tabsPopulator": "static/js/population/tabsPopulator.js",
     "markers/markersFilter": "static/js/markers/markersFilter.js",
     "markers/advMarkers": "static/js/markers/advMarkers.js",

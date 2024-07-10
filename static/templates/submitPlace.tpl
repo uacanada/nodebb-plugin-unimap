@@ -445,7 +445,7 @@
 
             <div class="col-12 offcanvas-fixed-bottom col-12 d-flex justify-content-end px-4 py-2">
 
-                <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#uacollapsecoord"
+                <button class="btn btn-light me-3" type="button" data-bs-toggle="collapse" data-bs-target="#uacollapsecoord"
                     aria-expanded="false" aria-controls="collapseCoordinates"><i
                         class="fa fa-location-crosshairs"></i></button>
                 <button type="button" id="cancel-location" class="btn btn-warning me-3" data-bs-dismiss="offcanvas"><i
