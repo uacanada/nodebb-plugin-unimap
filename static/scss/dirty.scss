@@ -366,7 +366,7 @@ img {
   background:var(--bs-body-bg);
   font-size: 0.75rem;
   box-shadow:0 0rem 1rem -0.5rem rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
+  border-radius: 1rem;
   transition: .2s all;
   overflow: hidden;
   height: 12.5rem;
@@ -1276,24 +1276,9 @@ body.map-touched #uacamap .leaflet-control-attribution.leaflet-control{ opacity:
 /* EXPERIMENT */
 
 
-
-
-
-
-
-
-
-
-
 #ua-cards-slider.only-one-item .swiper-slide {
   width: 100%;
 }
-
-// @media screen and (max-width: 500px) {
-
-// }
-
-
 
 
 
@@ -1311,12 +1296,6 @@ body.map-touched #uacamap .leaflet-control-attribution.leaflet-control{ opacity:
 
 
 }
-
-// @media screen and (max-width: 990px) {
-//   body.unimap-page.ua-sidepanel-opened #ua-dragger {
-//     margin-top: 100% !important;
-//   }
-// }
 
 @media screen and (min-width: 990px) {
 
@@ -1366,11 +1345,6 @@ body.map-touched{
 }
 
 
-
-
-
-
-
 button#cardsDown {
   transition: 1s;
   display: block;
@@ -1389,10 +1363,6 @@ button#cardsDown {
 }
 
 
-#cardsSwiperPlaceholder{
-  transition: all .2s;
-  bottom: -5px;
-}
 #ua-place-modal {
   height: 85vh;
   max-height: 1080px;
@@ -1418,12 +1388,16 @@ button#cardsDown {
 }
 @media (orientation: portrait), (max-width: 580px) {
  
+  #cardsSwiperPlaceholder{
+    bottom: -1rem;
+  }
+
   .ua-place-card-inner {
      max-height: 12rem;
      &:before {
       content: '';
       height: 0.25rem;
-      border-radius: 10px;
+      border-radius: 1rem;
       width: 3rem;
       background: #c6d4e0;
       display: block;
