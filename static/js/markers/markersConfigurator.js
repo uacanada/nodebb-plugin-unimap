@@ -27,6 +27,7 @@ define('markers/markersConfigurator',["core/variables" /*   Global object UniMap
             mainUsername,
             created,
             placetags,
+            assignedAuthor
           } = item;
     
     
@@ -128,7 +129,9 @@ define('markers/markersConfigurator',["core/variables" /*   Global object UniMap
                 </ul>
                 </a>`);
             
-          const cardHtml = UniMap.api.createCardHtml(profileIcon, tid, parentTabColor, cardTitleWithLinkAndIcon, socialtype, socialIcon, mainUsername, categoryName, eventNameHtml, eventHtml, bodyText);
+
+             
+          const cardHtml = UniMap.api.createCardHtml(profileIcon, tid, parentTabColor, cardTitleWithLinkAndIcon, socialtype, socialIcon, mainUsername, assignedAuthor, categoryName, eventNameHtml, eventHtml, bodyText);
           const eventDate = eventStartDate ? new Date(`${eventStartDate} ${eventStartTime}`):0;
           const eventTimestamp = eventDate ? Math.floor(eventDate.getTime() / 1000) : 0;
     

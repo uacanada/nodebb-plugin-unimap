@@ -1,6 +1,15 @@
 'use strict';
 define('panels/bottomCard',["core/variables" /*   Global object UniMap  */], function(UniMap) { 
-    UniMap.api.createCardHtml = (profileIcon, tid, parentTabColor, cardTitleWithLinkAndIcon, socialtype, socialIcon, mainUsername, categoryName, eventNameHtml, eventHtml, bodyText) => {
+    UniMap.api.createCardHtml = (profileIcon, tid, parentTabColor, cardTitleWithLinkAndIcon, socialtype, socialIcon, mainUsername, assignedAuthor, categoryName, eventNameHtml, eventHtml, bodyText) => {
+       
+       const assignedAuthorPicture = assignedAuthor.picture ? 
+       `<div style="background:url(/assets/uploads/profile/15-profileavatar-1675575055451.jpeg) center center;background-size:cover;width: 1.25rem;" 
+                class="place-pic me-2 ratio ratio-1x1 rounded-circle uac-inset-shadow"></div>`
+                :"";
+
+       const authorName  = assignedAuthor.fullname || assignedAuthor.username || assignedAuthor.userslug || 'Unknown';
+       // TODO: consider adding author's groupTitle
+
         const cardPlacePic = profileIcon
         ? ` <div class="col-auto">
                 <div class="d-flex align-items-start justify-content-end h-100">
@@ -14,14 +23,14 @@ define('panels/bottomCard',["core/variables" /*   Global object UniMap  */], fun
             <div class="col flex-grow-1">
             <div class="card-body py-1 h-100">
                 <h6 class="card-title mb-1" style="color:${parentTabColor};">${cardTitleWithLinkAndIcon}</h6>
-                <small class="text-muted"><span class="ua-mini-username text-primary username-${socialtype}">${socialIcon} ${mainUsername}</span></small>
+                <small class="text-muted"><div class="d-flex align-items-start justify-content-start h-100">${assignedAuthorPicture}<span class="ua-mini-username text-primary"> ${authorName}</span></div></small>
             </div>
             </div>${cardPlacePic}
         </div>
         <div class="row">
             <div class="col-12">
             <div class="card-body">
-                <p class="card-text"><span class="badge rounded-pill text-bg-fancy">${categoryName}</span>
+                <p class="card-text"><span class="badge rounded-pill text-bg-fancy">${categoryName}</span> ${socialIcon}
                 ${eventNameHtml}
                 ${eventHtml}
                 ${bodyText}
@@ -33,4 +42,4 @@ define('panels/bottomCard',["core/variables" /*   Global object UniMap  */], fun
   
     return cardHtml;
   }
-})
+})                
