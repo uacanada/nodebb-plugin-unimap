@@ -412,8 +412,8 @@
                 <input class="input-for-admin d-none" name="forcedpicture" value="">
                 <input class="input-for-admin d-none" name="classesFromAdmin" value="">
                 <input class="input-for-admin d-none" name="tid" value="">
-
-
+                <input class="input-for-admin d-none" name="assignedAuthorUid" value="">
+                
                 <div class="input-group mt-3">
                     <span class="input-group-text">🎯</span>
                     <input id="ua-latlng-text" class="form-control form-control-sm" name="latlng" type="text"
