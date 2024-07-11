@@ -681,27 +681,37 @@ define('utils/methods', ["core/variables" /*   Global object UniMap  */], functi
     }
   };
 
-  
-  /**
- * Returns the profile image URL based on the provided place object.
- * Falls back to a default marker image if neither placethumb nor pic is provided.
- *
- * @param {Object} place - Place object containing potential image URLs.
- * @returns {string} - URL of the profile image.
- */
-  UniMap.api.getProfileImage = (place) => {
-		const placethumb = place.placethumb || '';
-		const pic = place.pic || '';
-		const baseIcon = placethumb || pic;
-		
-		// Check if baseIcon is a non-empty string before proceeding
-		if (!baseIcon) {
-			return '/assets/plugins/nodebb-plugin-unimap/icons/placeMarker.png';
-		}
 
-		const profileIcon = baseIcon.includes('/assets/uploads') ? baseIcon : `/assets/uploads${baseIcon}`;
-		return profileIcon;
-	}
+  /**
+   * Returns the profile image URL for a given place, prioritizing custom images,
+   * assigned author's picture, and place images. If none are found, defaults to
+   * a generic place marker icon.
+   *
+   * @param {Object} place - The place object containing image URLs.
+   * @returns {string} The URL of the appropriate profile image.
+   */
+  UniMap.api.getProfileImage = (place) => {
+    // Prioritize forced picture, then thumbnail, then main picture
+    const forcedPicture = place.forcedpicture || '';
+    const placeThumbnail = place.placethumb || '';
+    const mainPicture = place.pic || '';
+
+    // Fall back to assigned author's picture if available
+    const assignedAuthorPicture = place.assignedAuthor?.picture || '';
+
+    // Select the first available image from the priority list
+    const baseIcon = forcedPicture || placeThumbnail || mainPicture || assignedAuthorPicture;
+
+    // If no image is found, use the default marker icon
+    if (!baseIcon) {
+      return '/assets/plugins/nodebb-plugin-unimap/icons/placeMarker.png';
+    }
+
+    // If the image is already in the uploads folder, return as-is
+    // Otherwise, prepend the uploads path
+    return baseIcon.startsWith('/assets/uploads') ? baseIcon : `/assets/uploads${baseIcon}`;
+  };
+
 
 
   UniMap.setTimeout = function(callback, delay) {
