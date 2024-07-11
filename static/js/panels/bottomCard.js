@@ -2,12 +2,12 @@
 define('panels/bottomCard',["core/variables" /*   Global object UniMap  */], function(UniMap) { 
     UniMap.api.createCardHtml = (profileIcon, tid, parentTabColor, cardTitleWithLinkAndIcon, socialtype, socialIcon, mainUsername, assignedAuthor, categoryName, eventNameHtml, eventHtml, bodyText) => {
        
-       const assignedAuthorPicture = assignedAuthor.picture ? 
+       const assignedAuthorPicture = assignedAuthor?.picture ? 
        `<div style="background:url(/assets/uploads/profile/15-profileavatar-1675575055451.jpeg) center center;background-size:cover;width: 1.25rem;" 
                 class="place-pic me-2 ratio ratio-1x1 rounded-circle uac-inset-shadow"></div>`
                 :"";
 
-       const authorName  = assignedAuthor.fullname || assignedAuthor.username || assignedAuthor.userslug || 'Unknown';
+       const authorName  = assignedAuthor?.fullname || assignedAuthor?.username || assignedAuthor?.userslug || mainUsername || 'Unknown';
        // TODO: consider adding author's groupTitle
 
         const cardPlacePic = profileIcon
